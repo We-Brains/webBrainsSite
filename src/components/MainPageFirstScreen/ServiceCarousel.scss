@@ -1,0 +1,80 @@
+.service-carousel {
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.stick {
+  display: block;
+  margin: 0 auto;
+  width: 2px;
+  height: 40px;
+  background-color: var(--violet-color);
+}
+
+@media only screen and (min-height: 650px) {
+  .service-carousel {
+    margin-top: 50px;
+    &-item {
+      padding: 15px 25px;
+      height: 273px;
+      svg {
+        height: 70px;
+        width: 70px;
+      }
+      &-header {
+        font-size: 30px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: 760px) {
+  .service-carousel {
+    margin-top: 70px;
+    &-item {
+      padding: 25px 35px;
+      height: 315px;
+      svg {
+        height: 100px;
+        width: 100px;
+      }
+      &-text {
+        font-size: 20px;
+      }
+    }
+  }
+  .stick {
+    height: 55px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .service-carousel {
+    margin: 0 20px;
+    overflow: visible;
+    .carousel-button-group {
+      display: none;
+    }
+    .react-multi-carousel-track {
+      padding: 0;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 20px;
+      width: 100%;
+      margin: 50px 0 0;
+      .react-multi-carousel-item {
+        width: auto !important;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .service-carousel {
+    margin: 0 170px;
+  }
+}

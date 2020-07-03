@@ -1,0 +1,25 @@
+.timeline {
+  padding: 40px 0;
+  overflow: hidden;
+  &-subheader {
+    color: var(--violet-color);
+  }
+}
+
+@media only screen and (min-height: 600px) {
+  .timeline {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .timeline {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

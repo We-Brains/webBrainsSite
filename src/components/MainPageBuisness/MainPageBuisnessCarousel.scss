@@ -1,0 +1,32 @@
+.main-page-buissness-carousel {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-page-buissness-carousel {
+    padding: 15px;
+    max-width: 580px;
+
+    .react-multi-carousel-track {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 20px;
+      transform: none !important;
+    }
+    .carousel-button-group {
+      display: none;
+    }
+    .react-multi-carousel-item {
+      width: auto !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .main-page-buissness-carousel {
+    max-width: 700px;
+  }
+}

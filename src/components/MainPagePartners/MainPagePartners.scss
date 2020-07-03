@@ -1,0 +1,121 @@
+.partners {
+  &-screen {
+    padding-top: 50px;
+  }
+  &-container {
+    padding: 30px 40px;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    &-shadow {
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(29, 26, 29, 0.6);
+    }
+
+    &-header,
+    &-subheader,
+    &-text {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      line-height: initial;
+      margin-bottom: 20px;
+    }
+    &-header,
+    &-text {
+      color: var(--white-color);
+    }
+    &-subheader,
+    &-text {
+      font-family: var(--font-roboto);
+      font-size: 14px;
+    }
+    &-header {
+      font-family: var(--font-oswald);
+      font-size: 35px;
+    }
+    &-subheader {
+      text-transform: uppercase;
+      color: var(--yellow-color);
+    }
+  }
+}
+
+@media only screen and (min-height: 600px) {
+  .partners {
+    &-container {
+      padding: 70px 40px;
+    }
+  }
+}
+
+@media only screen and (min-height: 700px) {
+  .partners {
+    &-container {
+      padding: 100px 40px;
+      &-subheader,
+      &-text {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: 800px) {
+  .partners {
+    &-container {
+      padding: 120px 40px;
+      &-subheader,
+      &-text {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .partners {
+    &-screen {
+      padding-top: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &-container {
+      &-text {
+        margin: 0px auto;
+        max-width: 500px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .partners {
+    &-screen {
+      padding-top: 70px;
+      justify-content: start;
+    }
+    &-container {
+      padding: 150px 40px;
+      background-position: top center;
+      &-header {
+        font-size: 50px;
+        margin-bottom: 30px;
+      }
+      &-subheader,
+      &-text {
+        font-size: 18px;
+      }
+      &-subheader {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

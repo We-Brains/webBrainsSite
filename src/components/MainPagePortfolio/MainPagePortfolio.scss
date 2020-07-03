@@ -1,0 +1,70 @@
+.main-page-portfolio {
+  &-carousel {
+    display: flex;
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  &-container {
+    padding: 40px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    .yellow-btn {
+      margin: 50px 15px 25px;
+    }
+  }
+  &-header {
+    position: relative;
+    padding: 15px;
+    &,
+    &-sub {
+      width: min-content;
+      font-size: 35px;
+      line-height: 35px;
+      font-family: var(--font-oswald);
+      color: var(--white-color);
+      white-space: nowrap;
+    }
+    &-sub {
+      padding: 0 15px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: var(--yellow-color);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 2px;
+      width: 30px;
+      background: var(--yellow-color);
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main-page-portfolio {
+    &-headers {
+      width: min-content;
+      margin: 0 0 0 auto;
+      .default-header-sub {
+        color: var(--violet-color);
+      }
+    }
+    &-carousel {
+      order: 0;
+    }
+    &-container {
+      justify-content: center;
+      .yellow-btn {
+        order: 1;
+        margin: 50px 15px 0 auto;
+      }
+    }
+  }
+}

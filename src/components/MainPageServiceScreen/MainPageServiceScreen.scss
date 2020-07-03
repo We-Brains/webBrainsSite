@@ -1,0 +1,140 @@
+.main-page-service {
+  &-container {
+    padding: 40px 0;
+    height: 100%;
+    background-color: var(--dark-gray-2f-color);
+    overflow: hidden;
+    &-btn {
+      display: none;
+    }
+  }
+  &-header {
+    position: relative;
+    padding: 15px;
+    &,
+    &-sub {
+      font-size: 35px;
+      line-height: 35px;
+      font-family: var(--font-oswald);
+      color: var(--white-color);
+    }
+    &-sub {
+      padding: 0 15px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: var(--yellow-color);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 2px;
+      width: 30px;
+      background: var(--violet-color);
+    }
+  }
+}
+
+@media only screen and (min-height: 700px) {
+  .main-page-service {
+    &-container {
+      padding: 50px 0;
+    }
+    &-header {
+      &-sub {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main-page-service {
+    &-container {
+      padding: 50px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &-btn {
+        display: block;
+        .yellow-btn {
+          margin: 20px auto;
+        }
+      }
+    }
+    &-header {
+      font-size: 55px;
+      line-height: initial;
+      &-sub {
+        line-height: initial;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+      &::before {
+        width: 40px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (min-height: 1000px) {
+  .main-page-service {
+    &-container {
+      padding: 120px 0;
+      &-btn.yellow-btn {
+        margin: 40px auto;
+      }
+    }
+    &-header {
+      &-sub {
+        margin-bottom: 70px;
+      }
+      &::before {
+        width: 40px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: 1200px) and (orientation: portrait) {
+  .main-page-service {
+    &-container {
+      padding: 200px 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .main-page-service {
+    &-container {
+      width: 1110px;
+      margin: auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .main-page-service {
+    &-container {
+      width: 1400px;
+      &-btn.yellow-btn {
+        font-size: 20px;
+        margin: 60px auto 0;
+      }
+    }
+    &-header {
+      &-sub {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .main-page-service {
+    &-container {
+      width: 1600px;
+    }
+  }
+}

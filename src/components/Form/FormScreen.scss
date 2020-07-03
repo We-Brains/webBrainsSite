@@ -1,0 +1,39 @@
+.form {
+  &-container {
+    height: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &-text {
+    margin-bottom: 20px;
+    padding: 0 15px;
+    font-family: var(--font-roboto);
+    color: var(--white-color);
+    font-size: 14px;
+    line-height: initial;
+  }
+}
+
+@media only screen and (min-height: 600px) {
+  .form {
+    &-text {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media only screen and (min-height: 768px) {
+  .form {
+    &-text {
+      display: none;
+    }
+    &-container {
+      .default-header-sub {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

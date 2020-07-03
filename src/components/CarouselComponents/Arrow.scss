@@ -1,0 +1,19 @@
+.carousel-button {
+  cursor: pointer;
+  position: absolute;
+  background: none;
+  border: none;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  &-right {
+    right: 10px;
+    transform: rotate(180deg);
+  }
+  &-left {
+    left: 10px;
+  }
+  & svg {
+    height: 20px;
+  }
+}

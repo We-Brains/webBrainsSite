@@ -1,0 +1,116 @@
+.main-page-buissness {
+  position: relative;
+  z-index: 10;
+  padding: 40px 0;
+  .default-header::before {
+    background-color: var(--violet-color);
+  }
+  .default-header-sub {
+    width: 100%;
+    white-space: normal;
+    line-height: initial;
+  }
+  &-container {
+    height: 100%;
+  }
+  &-text {
+    margin: 10px 0 15px;
+    padding: 0 15px;
+    font-family: var(--font-roboto);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: var(--white-color);
+    line-height: initial;
+  }
+  &-bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-position: center center;
+    background-size: cover;
+    filter: brightness(0.4);
+  }
+}
+
+@media only screen and (min-height: 600px) {
+  .main-page-buissness {
+    padding: 60px 0;
+    &-text {
+      margin: 60px 0;
+    }
+  }
+}
+@media only screen and (min-height: 700px) {
+  .main-page-buissness {
+    height: 100%;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, min-content);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .main-page-buissness {
+    display: grid;
+    justify-items: flex-end;
+    justify-content: center;
+    &-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &-text {
+      display: none;
+    }
+    &-bg {
+      width: 250px;
+      position: relative;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-page-buissness {
+    margin: 0 60px 0 auto;
+    &.defalut-container {
+      width: auto;
+    }
+    &-bg {
+      width: 275px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .main-page-buissness {
+    width: auto;
+    &.default-container {
+      width: auto;
+    }
+    &-bg {
+      width: 550px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-page-buissness {
+    width: auto;
+    &-bg {
+      width: 610px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .main-page-buissness {
+    margin: 0 auto 0 100px;
+    &-bg {
+      width: 45%;
+    }
+  }
+}
