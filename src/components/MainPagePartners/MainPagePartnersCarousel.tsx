@@ -3,8 +3,9 @@ import Carousel from 'react-multi-carousel'
 import MainPagePartnerItem from './MainPagePartnerItem'
 import CarouselButtonGroup from '../CarouselComponents/ArrowGroup'
 import './MainPagePartnersCarousel.scss'
+import { IMainPagePartnersCarousel } from './Types'
 
-const MainPagePartnersCarousel: React.FC = (): JSX.Element => {
+const MainPagePartnersCarousel: React.FC<IMainPagePartnersCarousel> = ({ partners }): JSX.Element => {
   const responsive = {
     mobile: {
       breakpoint: { max: 767, min: 0 },
@@ -17,12 +18,9 @@ const MainPagePartnersCarousel: React.FC = (): JSX.Element => {
   }
   return (
     <Carousel responsive={responsive} containerClass="partners-carousel" customButtonGroup={<CarouselButtonGroup />}>
-      <MainPagePartnerItem />
-      <MainPagePartnerItem />
-      <MainPagePartnerItem />
-      <MainPagePartnerItem />
-      <MainPagePartnerItem />
-      <MainPagePartnerItem />
+      {partners.map(({ id, image: { childImageSharp: { fluid: { src } } } }) => (
+        <MainPagePartnerItem key={id} imageSrc={src} />
+      ))}
     </Carousel>
   )
 }

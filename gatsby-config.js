@@ -20,7 +20,7 @@ module.exports = {
 			resolve: `gatsby-source-strapi`,
 			options: {
 				apiURL: `http://46.101.171.146:80`,
-				contentTypes: [ 'services', 'portfolios', 'partners' ],
+				contentTypes: [ 'services', 'portfolios', 'partners', 'buissness' ],
 				singleTypes: [ 'first-screen', 'portfolio-screen', 'partners-screen', 'buisness-screen' ],
 				queryLimit: 1000,
 				loginData: {

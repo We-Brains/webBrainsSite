@@ -36,8 +36,15 @@
 
 @media only screen and (min-width: 768px) {
   .partners-carousel {
+    margin: 50px 100px 0;
     .carousel-button {
       display: none;
     }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .partners-carousel {
+    margin: 50px 140px 0;
   }
 }

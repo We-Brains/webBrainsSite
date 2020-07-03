@@ -5,9 +5,10 @@ import MainPageBuisnessCarousel from './MainPageBuisnessCarousel'
 import { IMainPageBuisness } from './Types'
 
 const BUISNESS_SCREEN_QUERY = graphql`
-  query buisnessScreenQuery {
+  query MyQuery {
     strapiBuisnessScreen {
       title
+      text
       background {
         childImageSharp {
           fluid {
@@ -39,7 +40,7 @@ const MainPageBuisness: React.FC = (): JSX.Element => {
           <h2 className="default-header">{title}</h2>
           <h4 className="default-header-sub">Создайте качественный продукт вместе с нами</h4>
         </div>
-        <div className="main-page-buissness-text" />
+        <div className="main-page-buissness-text" dangerouslySetInnerHTML={{ __html: text }} />
         <div>
           <MainPageBuisnessCarousel />
         </div>

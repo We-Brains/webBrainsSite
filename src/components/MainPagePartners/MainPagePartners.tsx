@@ -15,6 +15,16 @@ const PARTNERTS_SCREEN_QUERY = graphql`
           }
         }
       }
+      partners {
+        id
+        image {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
+      }
     }
   }
 `
@@ -28,7 +38,8 @@ const MainPagePartners: React.FC = (): JSX.Element => {
         childImageSharp: {
           fluid: { src }
         }
-      }
+      },
+      partners
     }
   } = useStaticQuery(PARTNERTS_SCREEN_QUERY)
   return (
@@ -37,13 +48,9 @@ const MainPagePartners: React.FC = (): JSX.Element => {
         <div className="partners-container-shadow" />
         <h2 className="partners-container-header">{title}</h2>
         <h4 className="partners-container-subheader">С кем мы работаем</h4>
-        <p className="partners-container-text">
-          Наша веб-студия – это гарантия создания качественного веб сайта. Мы реализовали более 50 проектов для клиентов из 6 стран.
-          Профессионализм, индивидуальный подход, авторские решения – это далеко не все преимущества, обеспечивающие качество и
-          эффективность изготовленных нами проектов.
-        </p>
+        <p className="partners-container-text" dangerouslySetInnerHTML={{ __html: text }} />
       </div>
-      <MainPagePartnersCarousel />
+      <MainPagePartnersCarousel partners={partners} />
     </div>
   )
 }
