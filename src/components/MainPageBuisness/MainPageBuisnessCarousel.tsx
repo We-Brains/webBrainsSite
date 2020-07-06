@@ -3,8 +3,9 @@ import Carousel from 'react-multi-carousel'
 import CarouselButtonGroup from '../CarouselComponents/ArrowGroup'
 import MainPageBuisnessItem from './MainPageBuisnessItem'
 import './MainPageBuisnessCarousel.scss'
+import { IMainPageBuisnessCarousel } from './Types'
 
-const MainPageBuisnessCarousel = () => {
+const MainPageBuisnessCarousel: React.FC<IMainPageBuisnessCarousel> = ({ buissnesses }) => {
   const responsive = {
     mobile: {
       breakpoint: { max: 767, min: 0 },
@@ -17,10 +18,9 @@ const MainPageBuisnessCarousel = () => {
   }
   return (
     <Carousel containerClass="main-page-buissness-carousel" responsive={responsive} customButtonGroup={<CarouselButtonGroup />}>
-      <MainPageBuisnessItem />
-      <MainPageBuisnessItem />
-      <MainPageBuisnessItem />
-      <MainPageBuisnessItem />
+      {buissnesses.map(({ id, title, content, svg }) => (
+        <MainPageBuisnessItem key={id} title={title} content={content} svg={svg} />
+      ))}
     </Carousel>
   )
 }

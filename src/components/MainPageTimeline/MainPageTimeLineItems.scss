@@ -83,6 +83,12 @@
           display: block;
           position: absolute;
           top: -100px;
+          height: 50px;
+          width: 50px;
+          svg {
+            height: inherit;
+            width: inherit;
+          }
         }
 
         &-active ~ & {

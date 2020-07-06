@@ -1,31 +1,16 @@
 import React from 'react'
-import TelegramIcon from '../../assets/images/telegram.inline.svg'
+import { IFooterSocials } from './Types'
 
-const FooterSocials: React.FC = (): JSX.Element => {
+const FooterSocials: React.FC<IFooterSocials> = ({ socials }): JSX.Element => {
   return (
     <div className="footer-socials">
       <h3 className="footer-header">ПОДПИСЫВАЙТЕСЬ НА НАС</h3>
       <ul className="footer-socials-list">
-        <li className="footer-socials-list-item">
-          <a href="https://web.telegram.org/">
-            <TelegramIcon />
-          </a>
-        </li>
-        <li className="footer-socials-list-item">
-          <a href="https://web.telegram.org/">
-            <TelegramIcon />
-          </a>
-        </li>
-        <li className="footer-socials-list-item">
-          <a href="https://web.telegram.org/">
-            <TelegramIcon />
-          </a>
-        </li>
-        <li className="footer-socials-list-item">
-          <a href="https://web.telegram.org/">
-            <TelegramIcon />
-          </a>
-        </li>
+        {socials.map(({ id, title, href, svg }) => (
+          <li key={id} className="footer-socials-list-item">
+            <a href={href} title={title} dangerouslySetInnerHTML={{ __html: svg }} />
+          </li>
+        ))}
       </ul>
     </div>
   )

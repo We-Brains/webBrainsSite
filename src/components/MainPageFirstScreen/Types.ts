@@ -1,10 +1,22 @@
 import { IImage } from '../MainPagePortfolio/Types'
+import { IIDSocial } from '../CommonTypes'
 
 export interface IFirstScreenData {
-  title: string
-  btnText: string
+  strapiFirstScreen: {
+    title: string
+    btnText: string
+    services: IService[]
+    socials: IIDSocial[]
+    background: IImage
+  }
+}
+
+export interface IMainPageFirstScreen {
+  toForm: () => void
+}
+
+export interface IServiceCarousel {
   services: IService[]
-  background: IImage
 }
 
 export interface IService {
@@ -18,4 +30,8 @@ export interface IServiceItem {
   title: string
   svg: string
   content: string
+}
+
+export interface IBackground {
+  background: IImage
 }

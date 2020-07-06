@@ -1,12 +1,11 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel'
-import BuisnessIcon from '../../assets/images/buisness.inline.svg'
 import './ServiceCarousel.scss'
 import ServiceItem from './ServiceItem'
 import CarouselButtonGroup from '../CarouselComponents/ArrowGroup'
-import { IService } from './Types'
+import { IServiceCarousel } from './Types'
 
-const ServiceCarousel: React.FC<IService[]> = ({ services }): JSX.Element => {
+const ServiceCarousel: React.FC<IServiceCarousel> = ({ services }): JSX.Element => {
   const responsive = {
     mobile: {
       breakpoint: { max: 767, min: 0 },

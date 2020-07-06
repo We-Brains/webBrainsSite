@@ -1,5 +1,5 @@
 import React from 'react'
-import { IArrow } from './Types.ts'
+import { IArrow } from './Types'
 import ArrowIcon from '../../assets/images/arrow.inline.svg'
 import './Arrow.scss'
 

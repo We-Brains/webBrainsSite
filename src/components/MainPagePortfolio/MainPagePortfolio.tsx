@@ -2,6 +2,7 @@ import React from 'react'
 import './MainPagePortfolio.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import MainPagePortfolioCarousel from './MainPagePortfolioCarousel'
+import { IPortfolioScreenQuery } from './Types'
 
 const PORTFOLIO_SCREEN_QUERY = graphql`
   query portfolioScreenQuery {

@@ -1,13 +1,13 @@
 import React from 'react'
-import SVG from '../../assets/images/money.inline.svg'
 import './MainPageBuisnessItem.scss'
+import { IBuisnessItem } from './Types'
 
-const MainPageBuisnessItem: React.FC = (): JSX.Element => {
+const MainPageBuisnessItem: React.FC<IBuisnessItem> = ({ title, content, svg }): JSX.Element => {
   return (
     <div className="main-page-buissness-item">
-      <SVG />
-      <h4 className="main-page-buissness-item-header">Продажа</h4>
-      <div className="main-page-buissness-item-text">Продажа услуг/товаров компании через сайт. Привлечение новых клиентов.</div>
+      <div className="main-page-buissness-item-svg" dangerouslySetInnerHTML={{ __html: svg }} />
+      <h4 className="main-page-buissness-item-header">{title}</h4>
+      <div className="main-page-buissness-item-text" dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   )
 }

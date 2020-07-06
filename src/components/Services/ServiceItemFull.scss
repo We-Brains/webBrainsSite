@@ -6,6 +6,14 @@
   flex-direction: column;
   background-color: var(--violet-color);
   box-shadow: var(--violet-shadow);
+  &-svg {
+    height: 50px;
+    width: 50px;
+    svg {
+      width: inherit;
+      height: inherit;
+    }
+  }
   &-title {
     margin: 10px 0;
     padding: 0 0 5px;
@@ -42,16 +50,18 @@
     color: var(--white-color);
   }
   &-buttons {
-    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     & &-item.yellow-btn {
+      visibility: visible;
+      display: block;
       margin-bottom: 0;
       padding: 10px 20px;
       font-size: 15px;
     }
     &-item-more {
+      visibility: hidden;
       cursor: pointer;
       padding-bottom: 2px;
       font-family: var(--font-roboto);
@@ -91,7 +101,6 @@
       font-size: 18px;
     }
     &-text {
-      margin-top: 15px;
       font-size: 15px;
     }
     &-buttons {
@@ -117,8 +126,15 @@
 
 @media only screen and (min-width: 768px) {
   .service-full {
+    position: relative;
+    height: 100%;
     margin: 0;
     &-buttons {
+      width: 100%;
+      padding: inherit;
+      position: absolute;
+      left: 0;
+      bottom: 0;
       & &-item.yellow-btn {
         padding: 10px 20px;
       }
@@ -131,18 +147,20 @@
 
 @media only screen and (min-width: 1600px) {
   .service-full {
-    justify-content: space-between;
+    &-svg {
+      height: 55px;
+      width: 55px;
+    }
     &-header {
       font-size: 35px;
+    }
+    &-text {
+      font-size: 16px;
     }
     &-info {
       font-size: 25px;
       margin-bottom: 5px;
       line-height: initial;
-    }
-    &-text {
-      margin-top: 20px;
-      font-size: 20px;
     }
     &-buttons {
       & &-item.yellow-btn {

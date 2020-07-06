@@ -2,6 +2,12 @@
 	"hosting": {
 		"public": "public",
 		"ignore": [ "firebase.json", "**/.*", "**/node_modules/**" ],
+		"rewrites": [
+			{
+				"source": "/api/sendMail",
+				"function": "sendMail"
+			}
+		],
 		"headers": [
 			{
 				"source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",

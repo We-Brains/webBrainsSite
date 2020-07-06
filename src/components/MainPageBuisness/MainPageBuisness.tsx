@@ -5,10 +5,16 @@ import MainPageBuisnessCarousel from './MainPageBuisnessCarousel'
 import { IMainPageBuisness } from './Types'
 
 const BUISNESS_SCREEN_QUERY = graphql`
-  query MyQuery {
+  query buissnessQuery {
     strapiBuisnessScreen {
       title
       text
+      buissnesses {
+        id
+        title
+        content
+        svg
+      }
       background {
         childImageSharp {
           fluid {
@@ -25,6 +31,7 @@ const MainPageBuisness: React.FC = (): JSX.Element => {
     strapiBuisnessScreen: {
       title,
       text,
+      buissnesses,
       background: {
         childImageSharp: {
           fluid: { src }
@@ -42,7 +49,7 @@ const MainPageBuisness: React.FC = (): JSX.Element => {
         </div>
         <div className="main-page-buissness-text" dangerouslySetInnerHTML={{ __html: text }} />
         <div>
-          <MainPageBuisnessCarousel />
+          <MainPageBuisnessCarousel buissnesses={buissnesses} />
         </div>
       </div>
     </div>

@@ -2,9 +2,9 @@ import React from 'react'
 import Carousel from 'react-multi-carousel'
 import MainPagePortfolioCarouselItem from './MainPagePortfolioCarouselItem'
 import CarouselButtonGroup from '../CarouselComponents/ArrowGroup'
-import { IPortfolio } from './Types'
+import { IPortfolioCarousel } from './Types'
 
-const MainPagePortfolioCarousel: React.FC<IPortfolio[]> = ({ portfolios }): JSX.Element => {
+const MainPagePortfolioCarousel: React.FC<IPortfolioCarousel> = ({ portfolios }): JSX.Element => {
   const responsive = {
     mobile: {
       breakpoint: { max: 767, min: 0 },

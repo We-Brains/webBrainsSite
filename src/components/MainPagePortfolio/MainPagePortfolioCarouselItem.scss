@@ -23,6 +23,7 @@
     font-weight: bold;
   }
   &-link {
+    visibility: hidden;
     position: relative;
     padding: 5px 0;
     color: var(--yellow-color);

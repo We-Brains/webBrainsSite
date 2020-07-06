@@ -76,5 +76,16 @@
 @media only screen and (min-width: 1366px) {
   .service-carousel {
     margin: 0 170px;
+    .react-multi-carousel-track {
+      grid-gap: 50px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .service-carousel {
+    .react-multi-carousel-track {
+      grid-gap: 90px;
+    }
   }
 }

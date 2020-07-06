@@ -4,15 +4,15 @@ require('dotenv').config();
 
 module.exports = {
 	siteMetadata: {
-		title: 'gatsby-starter-typescript-plus',
-		description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
-		keywords: 'gatsbyjs, gatsby, javascript, sample, something',
+		title: 'Разработка сайтов, онлайн магазинов с дизайном под ключ. WebBrains Studio.',
+		description:
+			'Веб-студия полного цикла по созданию сайтов, лендингов, интернет-магазинов с уникальным дизайном и анализом ниши. На рынке 3 года. Закажи качественный онлайн продукт под ключ',
 		siteUrl: 'https://localhost:8000/',
 		pathPrefix: '/',
 		author: {
-			name: 'Resi Respati',
-			url: 'https://twitter.com/resir014',
-			email: 'resir014@gmail.com'
+			name: 'MMesyats',
+			url: 'https://t.me/MMesyats',
+			email: 'mmesyatz@gmail.com'
 		}
 	},
 	plugins: [
@@ -20,8 +20,26 @@ module.exports = {
 			resolve: `gatsby-source-strapi`,
 			options: {
 				apiURL: `http://46.101.171.146:80`,
-				contentTypes: [ 'services', 'portfolios', 'partners', 'buissness' ],
-				singleTypes: [ 'first-screen', 'portfolio-screen', 'partners-screen', 'buisness-screen' ],
+				contentTypes: [
+					'services',
+					'portfolios',
+					'partners',
+					'buissness',
+					'timeline-items',
+					'offers',
+					'offer-types',
+					'socials',
+					'contacts'
+				],
+				singleTypes: [
+					'first-screen',
+					'portfolio-screen',
+					'partners-screen',
+					'buisness-screen',
+					'timeline-screen',
+					'service-screen',
+					'footer-screen'
+				],
 				queryLimit: 1000,
 				loginData: {
 					identifier: process.env.LOGIN,
@@ -69,22 +87,7 @@ module.exports = {
 		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
-				plugins: [
-					{
-						resolve: 'gatsby-remark-custom-blocks',
-						options: {
-							blocks: {
-								danger: {
-									classes: 'danger'
-								},
-								info: {
-									classes: 'info',
-									title: 'optional'
-								}
-							}
-						}
-					}
-				]
+				plugins: []
 			}
 		},
 		'gatsby-plugin-typescript',

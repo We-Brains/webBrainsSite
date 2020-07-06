@@ -1,6 +1,6 @@
 import React from 'react'
-import BuisnessIcon from '../../assets/images/buisness.inline.svg'
 import './ServiceItem.scss'
+import { IServiceItem } from './Types'
 
 const ServiceItem: React.FC<IServiceItem> = ({ title, svg, content }): JSX.Element => {
   return (

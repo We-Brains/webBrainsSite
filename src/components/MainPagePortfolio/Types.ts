@@ -13,6 +13,10 @@ export interface IPortfolio {
   image: IImage
 }
 
+export interface IPortfolioCarousel {
+  portfolios: IPortfolio[]
+}
+
 export interface IPortfolioSingle {
   title: string
   content: string

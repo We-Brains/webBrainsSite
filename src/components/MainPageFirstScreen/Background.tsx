@@ -1,8 +1,8 @@
 import React from 'react'
 import './Background.scss'
-import { IImage } from '../MainPagePortfolio/Types'
+import { IBackground } from './Types'
 
-const Background: React.FC<IImage> = ({
+const Background: React.FC<IBackground> = ({
   background: {
     childImageSharp: {
       fluid: { src }

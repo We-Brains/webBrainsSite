@@ -5,13 +5,14 @@ export interface IMainPageBuisness {
     title: string
     text: string
     background: IImage
+    buissnesses: IIDBuisnessItem[]
   }
 }
-/*
+
 export interface IMainPageBuisnessCarousel {
-  buisn
+  buissnesses: IIDBuisnessItem[]
 }
- */
+
 export interface IIDBuisnessItem {
   id: number | string
   title: string
