@@ -7,7 +7,7 @@ module.exports = {
 		title: 'Разработка сайтов, онлайн магазинов с дизайном под ключ. WebBrains Studio.',
 		description:
 			'Веб-студия полного цикла по созданию сайтов, лендингов, интернет-магазинов с уникальным дизайном и анализом ниши. На рынке 3 года. Закажи качественный онлайн продукт под ключ',
-		siteUrl: 'https://localhost:8000/',
+		siteUrl: 'https://webbrains-489b6.web.app/',
 		pathPrefix: '/',
 		author: {
 			name: 'MMesyats',
@@ -88,6 +88,12 @@ module.exports = {
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: []
+			}
+		},
+		{
+			resolve: `gatsby-plugin-facebook-pixel`,
+			options: {
+				pixelId: '3123904567620069'
 			}
 		},
 		'gatsby-plugin-typescript',

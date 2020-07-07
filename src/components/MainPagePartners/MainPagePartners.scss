@@ -3,18 +3,18 @@
     padding-top: 50px;
   }
   &-container {
-    padding: 30px 40px;
     position: relative;
+    padding: 30px 40px;
     background-position: center center;
     background-size: cover;
     &-shadow {
-      z-index: 0;
       position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
+      z-index: 0;
       width: 100%;
-      background-color: rgba(29, 26, 29, 0.6);
+      height: 100%;
+      background-color: var(--shadow-color);
     }
 
     &-header,
@@ -22,9 +22,9 @@
     &-text {
       position: relative;
       z-index: 10;
-      text-align: center;
-      line-height: initial;
       margin-bottom: 20px;
+      line-height: initial;
+      text-align: center;
     }
     &-header,
     &-text {
@@ -32,16 +32,16 @@
     }
     &-subheader,
     &-text {
+      font-size: var(--font-14);
       font-family: var(--font-roboto);
-      font-size: 14px;
     }
     &-header {
+      font-size: var(--font-35);
       font-family: var(--font-oswald);
-      font-size: 35px;
     }
     &-subheader {
-      text-transform: uppercase;
       color: var(--yellow-color);
+      text-transform: uppercase;
     }
   }
 }
@@ -60,7 +60,7 @@
       padding: 100px 40px;
       &-subheader,
       &-text {
-        font-size: 15px;
+        font-size: var(--font-15);
       }
     }
   }
@@ -72,7 +72,7 @@
       padding: 120px 40px;
       &-subheader,
       &-text {
-        font-size: 15px;
+        font-size: var(--font-15);
       }
     }
   }
@@ -81,16 +81,16 @@
 @media only screen and (min-width: 768px) {
   .partners {
     &-screen {
-      padding-top: 0;
-      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      height: 100%;
+      padding-top: 0;
     }
     &-container {
       &-text {
-        margin: 0px auto;
         max-width: 500px;
+        margin: 0px auto;
       }
     }
   }
@@ -99,19 +99,19 @@
 @media only screen and (min-width: 1366px) {
   .partners {
     &-screen {
-      padding-top: 70px;
       justify-content: start;
+      padding-top: 70px;
     }
     &-container {
       padding: 150px 40px;
       background-position: top center;
       &-header {
-        font-size: 50px;
         margin-bottom: 30px;
+        font-size: var(--font-50);
       }
       &-subheader,
       &-text {
-        font-size: 18px;
+        font-size: var(--font-18);
       }
       &-subheader {
         margin-bottom: 50px;

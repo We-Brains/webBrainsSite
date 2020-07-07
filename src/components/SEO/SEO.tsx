@@ -23,7 +23,7 @@ const SEO: React.FC<ISEO> = ({
   lang = 'ru',
   titleProp = '',
   path = '',
-  canonicalUrl,
+  canonicalUrl = '/',
   noindex = false,
   date = '2019-07-06'
 }): JSX.Element => {
@@ -48,7 +48,6 @@ const SEO: React.FC<ISEO> = ({
       address: 'г.Киев, Коломыйский переулок 20',
       url: siteUrl,
       name: title,
-      sameAs: [],
       telephone: ''
     },
     {
@@ -91,7 +90,7 @@ const SEO: React.FC<ISEO> = ({
       htmlAttributes={{
         lang
       }}
-      title={titleProp}
+      title={title}
       titleTemplate="%s"
       meta={[
         {

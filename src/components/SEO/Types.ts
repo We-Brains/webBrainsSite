@@ -16,6 +16,6 @@ export interface ISEO {
   path: string
   date: string
   canonicalUrl?: string
-  noindex: bool
+  noindex: boolean
   keywords?: string
 }

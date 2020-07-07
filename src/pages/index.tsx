@@ -12,11 +12,11 @@ import '../layouts.scss'
 import Form from '../components/Form/FormScreen'
 import Footer from '../components/Footer/Footer'
 import serviceContext from '../components/Services/ServiceContext'
-import { IScrollCallbackArgs } from '../components/CommonTypes'
+import { IScrollCallbackArgs, ITargetWindow } from '../components/CommonTypes'
 import SEO from '../components/SEO/SEO'
 
-const changeAnchorsOnResize = ({ target: window }, changeAnchors) => {
-  if (typeof window !== 'undefined') {
+const changeAnchorsOnResize = ({ target: window }: ITargetWindow | Event, changeAnchors: (arg0: string[]) => void) => {
+  if (typeof window !== 'undefined' && typeof window.innerWidth !== 'undefined') {
     if (window.innerWidth < 1366) changeAnchors(['Main', 'NotMain', 'Portfolio', 'Partners', 'Timeline', 'Buisness', 'Form', 'Footer'])
     else changeAnchors(['Main', 'NotMain', 'Portfolio', 'Partners', 'Timeline', 'Buisness', 'Footer'])
   }
@@ -35,7 +35,7 @@ const IndexPage: React.FC = (): JSX.Element => {
   ])
   const [currentScreen, changeScreen] = useState<number>(0)
   useEffect(() => {
-    const handler: (e: Event) => void = e => {
+    const handler: (e: ITargetWindow | Event) => void = e => {
       changeAnchorsOnResize(e, changeAnchors)
     }
     if (typeof window !== 'undefined') {
@@ -62,7 +62,9 @@ const IndexPage: React.FC = (): JSX.Element => {
     scrollCallback: ({ activeSection }: IScrollCallbackArgs) => changeScreen(activeSection)
   }
   return (
-    <SEO>
+    <>
+      <SEO lang="ru" date="2020-06-07" path="/" noindex={false} />
+
       <SectionsContainer activeSection={currentScreen} {...options}>
         <Section>
           <Header />
@@ -95,7 +97,7 @@ const IndexPage: React.FC = (): JSX.Element => {
         </Section>
       </SectionsContainer>
       <CallBtn onClick={() => changeScreen(6)} />
-    </SEO>
+    </>
   )
 }
 export default IndexPage

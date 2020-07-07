@@ -1,21 +1,19 @@
 .header {
   display: flex;
-  padding: 20px 15px 20px;
-  display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px 20px;
   &-logo {
-    height: 20px;
     width: 100px;
+    height: 20px;
     &-link {
       display: block;
-      height: 100%;
       width: 100%;
-      background-image: url(../../assets/images/logo.svg);
-      background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat;
+      height: 100%;
+      svg {
+        height: inherit;
+      }
     }
   }
 }
@@ -28,7 +26,7 @@
 
 @media only screen and (min-height: 760px) {
   .header-logo {
-    height: 30px;
+    height: 60px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -37,13 +35,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--white-color);
     padding: 25px 15px;
+    background-color: var(--white-color);
     &-logo {
       &-link {
-        height: 100%;
         width: 100%;
-        background-image: url(../../assets/images/logo.white.svg);
+        height: 100%;
       }
     }
   }

@@ -1,16 +1,16 @@
 .main-page-portfolio {
   &-carousel {
-    display: flex;
     position: relative;
+    display: flex;
     margin-top: 20px;
     overflow: hidden;
   }
   &-container {
-    padding: 40px 0;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
+    padding: 40px 0;
     overflow: hidden;
     .yellow-btn {
       margin: 50px 15px 25px;
@@ -22,27 +22,27 @@
     &,
     &-sub {
       width: min-content;
-      font-size: 35px;
-      line-height: 35px;
-      font-family: var(--font-oswald);
       color: var(--white-color);
+      font-size: var(--font-35);
+      font-family: var(--font-oswald);
+      line-height: 35px;
       white-space: nowrap;
     }
     &-sub {
-      padding: 0 15px;
       margin-bottom: 10px;
-      font-size: 15px;
+      padding: 0 15px;
+      color: var(--yellow-color);
+      font-size: var(--font-15);
       line-height: 15px;
       text-transform: uppercase;
-      color: var(--yellow-color);
     }
     &::before {
-      content: '';
       position: absolute;
       top: 0;
-      height: 2px;
       width: 30px;
+      height: 2px;
       background: var(--yellow-color);
+      content: '';
     }
   }
 }

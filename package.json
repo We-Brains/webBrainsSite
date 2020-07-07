@@ -1,14 +1,12 @@
 {
-	"name": "gatsby-starter-typescript-plus",
-	"description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
+	"name": "webbrains-site",
 	"version": "1.0.0",
 	"private": true,
-	"author": "Resi Respati <resir014@gmail.com>",
+	"author": "MMesyats<mmesyatz@gmail.com>",
 	"keywords": [
 		"gatsby"
 	],
 	"license": "MIT",
-	"main": "n/a",
 	"scripts": {
 		"build": "gatsby build",
 		"clean": "rimraf public",
@@ -32,6 +30,7 @@
 		"gatsby": "^2.23.18",
 		"gatsby-image": "^2.4.12",
 		"gatsby-plugin-canonical-urls": "^2.3.9",
+		"gatsby-plugin-facebook-pixel": "^1.0.3",
 		"gatsby-plugin-firebase": "^0.2.0-beta.4",
 		"gatsby-plugin-google-fonts": "^1.0.1",
 		"gatsby-plugin-google-fonts-v2": "0.0.6",
@@ -88,5 +87,59 @@
 		"stylelint-order": "^4.0.0",
 		"stylelint-scss": "^3.16.0",
 		"typescript": "^3.8.3"
+	},
+	"stylelint": {
+		"extends": [
+			"stylelint-config-recommended",
+			"stylelint-config-rational-order"
+		],
+		"plugins": [
+			"stylelint-order",
+			"stylelint-scss",
+			"stylelint-config-rational-order/plugin",
+			"stylelint-high-performance-animation",
+			"stylelint-declaration-use-variable"
+		],
+		"rules": {
+			"no-empty-source": [
+				true,
+				{
+					"severity": "warning"
+				}
+			],
+			"plugin/no-low-performance-animation-properties": [
+				true,
+				{
+					"severity": "warning"
+				}
+			],
+			"sh-waqar/declaration-use-variable": [
+				[
+					"/color/",
+					"font-size",
+					"font-family",
+					"font-weight"
+				]
+			],
+			"order/properties-order": [],
+			"plugin/rational-order": [
+				true,
+				{
+					"border-in-box-model": false,
+					"empty-line-between-groups": false
+				}
+			],
+			"selector-type-no-unknown": [
+				true,
+				{
+					"ignore": [
+						"custom-elements"
+					]
+				}
+			],
+			"no-descending-specificity": true,
+			"at-rule-no-unknown": null,
+			"scss/at-rule-no-unknown": true
+		}
 	}
 }

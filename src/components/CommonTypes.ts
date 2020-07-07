@@ -22,3 +22,9 @@ export interface IServiceItemFull {
 export interface IScrollCallbackArgs {
   activeSection: number
 }
+
+export interface ITargetWindow {
+  target: {
+    innerWidth: number
+  }
+}

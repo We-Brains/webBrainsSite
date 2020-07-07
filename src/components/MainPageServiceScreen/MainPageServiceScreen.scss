@@ -1,9 +1,9 @@
 .main-page-service {
   &-container {
-    padding: 40px 0;
     height: 100%;
-    background-color: var(--dark-gray-2f-color);
+    padding: 40px 0;
     overflow: hidden;
+    background-color: var(--dark-gray-2f-color);
     &-btn {
       display: none;
     }
@@ -13,26 +13,26 @@
     padding: 15px;
     &,
     &-sub {
-      font-size: 35px;
-      line-height: 35px;
-      font-family: var(--font-oswald);
       color: var(--white-color);
+      font-size: var(--font-35);
+      font-family: var(--font-oswald);
+      line-height: 35px;
     }
     &-sub {
-      padding: 0 15px;
       margin-bottom: 10px;
-      font-size: 15px;
+      padding: 0 15px;
+      color: var(--yellow-color);
+      font-size: var(--font-15);
       line-height: 15px;
       text-transform: uppercase;
-      color: var(--yellow-color);
     }
     &::before {
-      content: '';
       position: absolute;
       top: 0;
-      height: 2px;
       width: 30px;
+      height: 2px;
       background: var(--violet-color);
+      content: '';
     }
   }
 }
@@ -53,10 +53,10 @@
 @media only screen and (min-width: 768px) {
   .main-page-service {
     &-container {
-      padding: 50px 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 50px 0;
       &-btn {
         display: block;
         .yellow-btn {
@@ -65,12 +65,12 @@
       }
     }
     &-header {
-      font-size: 55px;
+      font-size: var(--font-55);
       line-height: initial;
       &-sub {
-        line-height: initial;
-        font-size: 20px;
         margin-bottom: 30px;
+        font-size: var(--font-20);
+        line-height: initial;
       }
       &::before {
         width: 40px;
@@ -119,8 +119,8 @@
     &-container {
       width: 1400px;
       &-btn.yellow-btn {
-        font-size: 20px;
         margin: 60px auto 0;
+        font-size: var(--font-20);
       }
     }
     &-header {

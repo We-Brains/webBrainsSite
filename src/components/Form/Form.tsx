@@ -53,7 +53,6 @@ const Form = () => {
                 .catch(err => {})
                 .finally(() => {})
             } else {
-              let tmp = []
               /* if (name.length < 2) tmp.push(name)
               if (/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(tel) === false) tmp.push(tel)
               if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail) === false) tmp.push(mail)

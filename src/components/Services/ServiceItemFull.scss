@@ -1,90 +1,96 @@
 .service-full {
-  margin: 0 20px;
-  padding: 15px 25px;
-  width: auto;
+  position: relative;
   display: flex;
   flex-direction: column;
+  width: auto;
+  height: 100%;
+  margin: 0 20px;
+  padding: 15px 25px;
   background-color: var(--violet-color);
   box-shadow: var(--violet-shadow);
   &-svg {
-    height: 50px;
     width: 50px;
+    height: 50px;
     svg {
       width: inherit;
       height: inherit;
     }
   }
   &-title {
+    position: relative;
     margin: 10px 0;
     padding: 0 0 5px;
-    position: relative;
+    color: var(--white-color);
+    font-weight: var(--font-weight-900);
+    font-size: var(--font-16);
     font-family: var(--font-oswald);
     font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
     line-height: initial;
-    color: var(--white-color);
     &::after {
-      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
       width: 30px;
       height: 2px;
       background-color: var(--yellow-color);
+      content: '';
     }
   }
   &-info {
-    font-family: var(--font-roboto);
-    font-weight: bold;
-    font-size: 15px;
     color: var(--white-color);
+    font-weight: var(--font-weight-900);
+    font-size: var(--font-15);
+    font-family: var(--font-roboto);
   }
   &-text {
     margin-top: 10px;
+    color: var(--white-color);
+    font-weight: var(--font-weight-400);
+    font-size: var(--font-10);
     font-family: var(--font-roboto);
     font-style: normal;
-    font-weight: normal;
-    font-size: 10px;
     line-height: initial;
-    color: var(--white-color);
   }
   &-buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: inherit;
     & &-item.yellow-btn {
-      visibility: visible;
       display: block;
       margin-bottom: 0;
       padding: 10px 20px;
-      font-size: 15px;
+      font-size: var(--font-15);
+      visibility: visible;
     }
     &-item-more {
-      visibility: hidden;
-      cursor: pointer;
       padding-bottom: 2px;
+      color: var(--white-color);
+      font-weight: var(--font-weight-900);
+      font-size: var(--font-12);
       font-family: var(--font-roboto);
       font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
       line-height: initial;
-      color: var(--white-color);
       border-bottom: 1px solid var(--white-color);
+      visibility: hidden;
+      cursor: pointer;
     }
   }
 }
 
 @media only screen and (min-height: 600px) {
   .service-full {
-    padding: 25px;
     margin: 0 40px;
+    padding: 25px;
     &-title {
       margin: 20px 0;
-      font-size: 20px;
+      font-size: var(--font-20);
     }
     &-text {
-      font-size: 13px;
+      font-size: var(--font-13);
     }
     &-buttons {
       margin-top: 15px;
@@ -95,22 +101,22 @@
 @media only screen and (min-height: 700px) {
   .service-full {
     &-title {
-      font-size: 25px;
+      font-size: var(--font-25);
     }
     &-info {
-      font-size: 18px;
+      font-size: var(--font-18);
     }
     &-text {
-      font-size: 15px;
+      font-size: var(--font-15);
     }
     &-buttons {
       margin-top: 25px;
       & &-item.yellow-btn {
         padding: 20px;
-        font-size: 18px;
+        font-size: var(--font-18);
       }
       &-item-more {
-        font-size: 15px;
+        font-size: var(--font-15);
       }
     }
   }
@@ -130,11 +136,11 @@
     height: 100%;
     margin: 0;
     &-buttons {
+      position: absolute;
+      bottom: 0;
+      left: 0;
       width: 100%;
       padding: inherit;
-      position: absolute;
-      left: 0;
-      bottom: 0;
       & &-item.yellow-btn {
         padding: 10px 20px;
       }
@@ -148,27 +154,27 @@
 @media only screen and (min-width: 1600px) {
   .service-full {
     &-svg {
-      height: 55px;
       width: 55px;
+      height: 55px;
     }
     &-header {
-      font-size: 35px;
+      font-size: var(--font-35);
     }
     &-text {
-      font-size: 16px;
+      font-size: var(--font-16);
     }
     &-info {
-      font-size: 25px;
       margin-bottom: 5px;
+      font-size: var(--font-25);
       line-height: initial;
     }
     &-buttons {
       & &-item.yellow-btn {
         padding: 15px 30px;
-        font-size: 20px;
+        font-size: var(--font-20);
       }
       &-item-more {
-        font-size: 20px;
+        font-size: var(--font-20);
       }
     }
   }
