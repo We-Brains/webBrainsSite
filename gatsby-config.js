@@ -96,6 +96,18 @@ module.exports = {
 				pixelId: '3123904567620069'
 			}
 		},
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				name: 'gatsby-starter-default',
+				short_name: 'starter',
+				start_url: '/',
+				background_color: '#000000',
+				theme_color: '#000000',
+				display: 'minimal-ui',
+				icon: 'src/assets/images/favicon.png'
+			}
+		},
 		'gatsby-plugin-typescript',
 		'gatsby-plugin-sharp',
 		'gatsby-plugin-sass',

@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  grid-row: 1 / span 4;
   width: auto;
   height: 100%;
   margin: 0 20px;

@@ -25,7 +25,7 @@
     &-first,
     &-second,
     &-third {
-      transition: 0.3s;
+      transition: transform 0.3s;
     }
     &-back {
       display: flex;
@@ -147,7 +147,8 @@
   .service-selector {
     &-column {
       display: grid;
-      grid-gap: 10px;
+      grid-gap: 20px;
+      grid-template-rows: repeat(4, 1fr);
       grid-template-columns: 1fr;
       align-self: self-start;
       width: 100%;
@@ -190,10 +191,6 @@
       .yellow-btn {
         display: none;
       }
-
-      display: grid;
-      grid-row-gap: 20px;
-      grid-template-columns: 1fr;
     }
     &-item {
       font-size: var(--font-20);

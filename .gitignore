@@ -7,7 +7,8 @@ public/
 
 # Gatsby cache
 .cache/
-
+.firebase/**
+src/libs/**
 # Logs
 logs
 *.log
