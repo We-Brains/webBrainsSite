@@ -6,7 +6,7 @@ const PERCENT_TIME = 20
 
 const Timeline: React.FC<ITimeline> = ({ currentItem, changeItem, isPlaying }): JSX.Element => {
   const [progress, changeProgress] = useState<number>(0)
-  const [timeout, changeTimeout] = useState()
+  const [timeout, changeTimeout] = useState<NodeJS.Timeout>()
   useEffect(() => {
     return () => {
       clearTimeout(timeout)
@@ -15,7 +15,7 @@ const Timeline: React.FC<ITimeline> = ({ currentItem, changeItem, isPlaying }): 
   useEffect(() => {
     if (progress <= 100.5 && isPlaying) {
       changeTimeout(
-        setTimeout(function go() {
+        setTimeout(() => {
           changeProgress(progress + 0.1)
           if (Math.floor(progress / (100 / 6)) === currentItem + 1) changeItem(currentItem + 1)
           if (progress >= 100) changeItem(6)

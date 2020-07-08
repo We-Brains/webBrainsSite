@@ -194,6 +194,13 @@
     }
     &-contact-btn {
       margin-top: 50px;
+      &-text {
+        font-size: var(--font-16);
+      }
+      &-svg {
+        width: 40px;
+        height: 40px;
+      }
     }
     &-copyright {
       position: relative;
@@ -201,7 +208,7 @@
       grid-column: 1 / span 2;
       margin-top: 40px;
       text-align: left;
-      background-color: transparent;
+      background-color: var(--transparent);
     }
     &-contacts {
       grid-row: 1;
@@ -230,15 +237,6 @@
             height: 18px;
           }
         }
-      }
-    }
-    &-contact-btn {
-      &-text {
-        font-size: var(--font-16);
-      }
-      &-svg {
-        width: 40px;
-        height: 40px;
       }
     }
   }

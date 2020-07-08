@@ -21,6 +21,10 @@
     font-family: var(--font-roboto);
     background-color: var(--transparent);
     border: 1px solid var(--white-color);
+    &-error {
+      color: var(--yellow-color);
+      border: 1px solid var(--yellow-color);
+    }
     &::placeholder {
       color: var(--white-transparent-color);
     }

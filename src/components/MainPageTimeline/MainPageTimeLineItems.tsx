@@ -24,12 +24,12 @@ const MainPageTimeLineItems: React.FC<IMainPageTimeLineItems> = ({ items, curren
           <h4 className="timeline-btn-item-header">{title}</h4>
           <button
             className={`timeline-btn ${currentItem === idx ? 'timeline-btn-active' : ''} ${idx === 0 &&
-              (isPlaying ? 'timeline-btn-play' : 'timeline-btn-pause')}`}
+              (isPlaying ? 'timeline-btn-pause' : 'timeline-btn-play')}`}
             type="button"
             key={title}
             value={title}
           >
-            {idx === 0 && <>{isPlaying ? <PlayBtn /> : <PauseBtn />}</>}
+            {idx === 0 && <>{isPlaying ? <PauseBtn /> : <PlayBtn />}</>}
           </button>
         </div>
       ))}

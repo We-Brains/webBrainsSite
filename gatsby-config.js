@@ -38,7 +38,8 @@ module.exports = {
 					'buisness-screen',
 					'timeline-screen',
 					'service-screen',
-					'footer-screen'
+					'footer-screen',
+					'form-result-screen'
 				],
 				queryLimit: 1000,
 				loginData: {
@@ -88,12 +89,6 @@ module.exports = {
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: []
-			}
-		},
-		{
-			resolve: `gatsby-plugin-facebook-pixel`,
-			options: {
-				pixelId: '3123904567620069'
 			}
 		},
 		{

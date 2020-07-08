@@ -108,10 +108,36 @@
   }
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
   .service-item {
     margin: 0;
     padding: 25px 25px;
+    transition: var(--bg-02);
+    &-header::after {
+      transition: var(--bg-02);
+    }
+    &-svg * {
+      transition: fill 0.2s;
+    }
+    &-header,
+    &-text {
+      transition: var(--color-02);
+    }
+    &:hover {
+      background-color: var(--yellow-color);
+      .service-item {
+        &-header::after {
+          background-color: var(--dark-gray-1d-color);
+        }
+        &-svg * {
+          fill: var(--dark-gray-1d-color);
+        }
+        &-header,
+        &-text {
+          color: var(--dark-gray-1d-color);
+        }
+      }
+    }
   }
 }
 
