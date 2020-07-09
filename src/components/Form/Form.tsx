@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { navigate } from 'gatsby'
 import CubesSVG from '../../assets/images/cubes.inline.svg'
 import './Form.scss'
 
@@ -18,7 +19,9 @@ const Form = () => {
         method: 'POST',
         body: JSON.stringify(body)
       })
-        .then(response => {})
+        .then(response => {
+          navigate('/thanks')
+        })
         .catch(err => {})
         .finally(() => {})
     } else {
