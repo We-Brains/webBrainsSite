@@ -1,4 +1,4 @@
-.service-carousel {
+.InfiniteCarousel {
   position: relative;
   display: flex;
   margin-top: 20px;
@@ -14,78 +14,74 @@
 }
 
 @media only screen and (min-height: 650px) {
-  .service-carousel {
-    margin-top: 50px;
-    &-item {
-      height: 273px;
-      padding: 15px 25px;
-      svg {
-        width: 70px;
-        height: 70px;
-      }
-      &-header {
-        font-size: var(--font-30);
-        line-height: 30px;
+  .main-page {
+    .InfiniteCarousel {
+      margin-top: 50px;
+      .service-item {
+        height: 273px;
+        padding: 15px 25px;
       }
     }
   }
 }
 
 @media only screen and (min-height: 760px) {
-  .service-carousel {
-    margin-top: 70px;
-    &-item {
-      height: 315px;
-      padding: 25px 35px;
-      svg {
-        width: 100px;
-        height: 100px;
-      }
-      &-text {
-        font-size: var(--font-20);
+  .main-page {
+    .InfiniteCarousel {
+      margin-top: 70px;
+
+      .service-item {
+        height: 315px;
+        padding: 25px 35px;
       }
     }
-  }
-  .stick {
-    height: 55px;
+    .stick {
+      height: 55px;
+    }
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .service-carousel {
+  .main-page .InfiniteCarousel {
     margin: 0 20px;
     overflow: visible;
-    .carousel-button-group {
-      display: none;
+    .service-item {
+      height: 100%;
     }
-    .react-multi-carousel-track {
+    &Frame ul {
       position: relative;
-      display: grid;
+      display: grid !important;
       grid-column-gap: 20px;
       grid-template-columns: repeat(3, 1fr);
-      width: 100%;
+      width: 100% !important;
       margin: 50px 0 0;
       padding: 0;
-      .react-multi-carousel-item {
-        width: auto !important;
+      transform: none !important;
+      > li:nth-of-type(n + 4) {
+        display: none !important;
       }
+    }
+    &Slide {
+      width: auto !important;
+      margin: 0 !important;
+    }
+    .carousel-button {
+      display: none;
     }
   }
 }
 
 @media only screen and (min-width: 1366px) {
-  .service-carousel {
+  .main-page .InfiniteCarousel {
     margin: 0 170px;
-    .react-multi-carousel-track {
-      grid-gap: 50px;
+    &Frame ul {
+      grid-column-gap: 50px;
     }
   }
 }
 
 @media only screen and (min-width: 1600px) {
-  .service-carousel {
-    .react-multi-carousel-track {
-      grid-gap: 90px;
-    }
+  .main-page .InfiniteCarouselFrame ul {
+    grid-column-gap: 90px;
   }
 }

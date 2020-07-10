@@ -1,28 +1,21 @@
 import React from 'react'
-import Carousel from 'react-multi-carousel'
-import './ServiceCarousel.scss'
-import ServiceItem from './ServiceItem'
-import CarouselButtonGroup from '../CarouselComponents/ArrowGroup'
+import InfiniteCarousel from 'react-leaf-carousel'
 import { IServiceCarousel } from './Types'
+import ServiceItem from './ServiceItem'
+import './ServiceCarousel.scss'
+import Arrow from '../CarouselComponents/Arrow'
 
 const ServiceCarousel: React.FC<IServiceCarousel> = ({ services }): JSX.Element => {
-  const responsive = {
-    mobile: {
-      breakpoint: { max: 767, min: 0 },
-      items: 1
-    },
-    other: {
-      breakpoint: { max: Infinity, min: 768 },
-      items: 3
-    }
-  }
   return (
     <>
-      <Carousel containerClass="service-carousel" responsive={responsive} customButtonGroup={<CarouselButtonGroup />}>
+      <InfiniteCarousel
+        nextArrow={<Arrow className="carousel-button-right" onClick={() => {}} />}
+        prevArrow={<Arrow className="carousel-button-left" onClick={() => {}} />}
+      >
         {services.map(({ id, title, svg, content }) => (
           <ServiceItem key={id} title={title} svg={svg} content={content} />
         ))}
-      </Carousel>
+      </InfiniteCarousel>
       <div className="stick" />
     </>
   )

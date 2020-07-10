@@ -1,36 +1,49 @@
-import React from 'react'
-import Carousel from 'react-multi-carousel'
+/* eslint-disable no-nested-ternary */
+import React, { useState } from 'react'
+import InfiniteCarousel from 'react-leaf-carousel'
 import MainPagePortfolioCarouselItem from './MainPagePortfolioCarouselItem'
-import CarouselButtonGroup from '../CarouselComponents/ArrowGroup'
 import { IPortfolioCarousel } from './Types'
+import Arrow from '../CarouselComponents/Arrow'
 
 const MainPagePortfolioCarousel: React.FC<IPortfolioCarousel> = ({ portfolios }): JSX.Element => {
-  const responsive = {
-    mobile: {
-      breakpoint: { max: 767, min: 0 },
-      items: 1
-    },
-    tablet: {
-      breakpoint: { max: Infinity, min: 768 },
-      items: 1,
-      partialVisibilityGutter: 350
-    }
-  }
+  const [currentSlide, changeSlide] = useState<number>(0)
   return (
     <>
-      <Carousel
-        containerClass="main-page-portfolio-carousel"
-        responsive={responsive}
-        customButtonGroup={<CarouselButtonGroup />}
-        centerMode={typeof window !== 'undefined' && window.innerWidth >= 768}
-        infinite
-        showDots
-        renderDotsOutside
+      <InfiniteCarousel
+        nextArrow={<Arrow className="carousel-button-right" onClick={() => {}} />}
+        prevArrow={<Arrow className="carousel-button-left" onClick={() => {}} />}
+        breakpoints={[
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]}
+        slidesToShow={3}
+        slidesToScroll={1}
+        onNextClick={(slide: number) => {
+          console.log(slide)
+        }}
       >
-        {portfolios.map(({ id, title, content, image }) => (
-          <MainPagePortfolioCarouselItem key={id} title={title} content={content} image={image} />
+        {portfolios.map(({ id, title, content, image }, idx) => (
+          <MainPagePortfolioCarouselItem
+            className={`${
+              idx === currentSlide
+                ? 'prev-slide'
+                : idx - 1 === currentSlide
+                ? 'current-slide'
+                : idx - 2 === currentSlide
+                ? 'next-slide'
+                : ''
+            }`}
+            key={id}
+            title={title}
+            content={content}
+            image={image}
+          />
         ))}
-      </Carousel>
+      </InfiniteCarousel>
     </>
   )
 }

@@ -18,6 +18,7 @@ export interface IPortfolioCarousel {
 }
 
 export interface IPortfolioSingle {
+  className?: string
   title: string
   content: string
   image: IImage

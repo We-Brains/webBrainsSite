@@ -4,6 +4,7 @@ import './MainPagePortfolioCarouselItem.scss'
 import { IPortfolioSingle } from './Types'
 
 const MainPagePortfolioCarouselItem: React.FC<IPortfolioSingle> = ({
+  className = '',
   title,
   content,
   image: {
@@ -13,7 +14,7 @@ const MainPagePortfolioCarouselItem: React.FC<IPortfolioSingle> = ({
   }
 }): JSX.Element => {
   return (
-    <div className="main-page-portfolio-carousel-item" style={{ backgroundImage: `url(${src})` }}>
+    <div className={`main-page-portfolio-carousel-item ${className}`} style={{ backgroundImage: `url(${src})` }}>
       <div className="main-page-portfolio-carousel-item-shadow" />
       <h4 className="main-page-portfolio-carousel-item-header">{title}</h4>
       <p className="main-page-portfolio-carousel-item-info">{content}</p>

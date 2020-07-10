@@ -1,11 +1,11 @@
 .carousel-button {
-  cursor: pointer;
   position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
   background: none;
   border: none;
-  display: flex;
-  height: 100%;
-  align-items: center;
+  cursor: pointer;
   &-right {
     right: 10px;
     transform: rotate(180deg);
