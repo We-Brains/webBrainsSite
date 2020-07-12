@@ -2,8 +2,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 260px;
-  margin: 0 40px;
+  height: 280px;
+  margin: 0 30px;
   padding: 15px 25px;
   background-color: var(--gray-color);
   &-svg {
@@ -84,6 +84,7 @@
 @media only screen and (min-height: 650px) {
   .service-item {
     height: 273px;
+    margin: 0 40px;
     padding: 15px 25px;
     &-svg {
       width: 70px;
@@ -102,8 +103,8 @@
     height: 100%;
     padding: 25px 35px;
     &-svg {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
     }
   }
 }

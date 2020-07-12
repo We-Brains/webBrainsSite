@@ -1,8 +1,5 @@
-.InfiniteCarousel {
-  position: relative;
-  display: flex;
+.carousel-container {
   margin-top: 20px;
-  overflow: hidden;
 }
 
 .stick {
@@ -15,7 +12,7 @@
 
 @media only screen and (min-height: 650px) {
   .main-page {
-    .InfiniteCarousel {
+    .carousel-container {
       margin-top: 50px;
       .service-item {
         height: 273px;
@@ -27,7 +24,7 @@
 
 @media only screen and (min-height: 760px) {
   .main-page {
-    .InfiniteCarousel {
+    .carousel-container {
       margin-top: 70px;
 
       .service-item {
@@ -42,46 +39,51 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .main-page .InfiniteCarousel {
-    margin: 0 20px;
-    overflow: visible;
-    .service-item {
-      height: 100%;
-    }
-    &Frame ul {
-      position: relative;
-      display: grid !important;
-      grid-column-gap: 20px;
-      grid-template-columns: repeat(3, 1fr);
-      width: 100% !important;
-      margin: 50px 0 0;
-      padding: 0;
-      transform: none !important;
-      > li:nth-of-type(n + 4) {
-        display: none !important;
-      }
-    }
-    &Slide {
-      width: auto !important;
-      margin: 0 !important;
-    }
+  .main-page {
     .carousel-button {
       display: none;
+    }
+    .alice-carousel {
+      padding: 0 20px;
+      .service-item {
+        height: 100%;
+      }
+      &__stage {
+        position: relative;
+        display: grid !important;
+        grid-column-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100% !important;
+        padding: 0;
+        transform: none !important;
+        &-item {
+          width: 100% !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          &:nth-of-type(n + 4) {
+            display: none;
+          }
+        }
+      }
+      &Slide {
+        width: auto !important;
+        margin: 0 !important;
+      }
     }
   }
 }
 
 @media only screen and (min-width: 1366px) {
-  .main-page .InfiniteCarousel {
-    margin: 0 170px;
-    &Frame ul {
+  .main-page .alice-carousel {
+    padding: 0 170px;
+    &__stage {
       grid-column-gap: 50px;
     }
   }
 }
 
 @media only screen and (min-width: 1600px) {
-  .main-page .InfiniteCarouselFrame ul {
+  .main-page .alice-carousel {
     grid-column-gap: 90px;
   }
 }

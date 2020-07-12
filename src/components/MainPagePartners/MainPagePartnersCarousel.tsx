@@ -1,27 +1,30 @@
-import React from 'react'
-import Carousel from 'react-multi-carousel'
+import React, { useRef } from 'react'
+import AliceCarousel from 'react-alice-carousel'
 import MainPagePartnerItem from './MainPagePartnerItem'
-import CarouselButtonGroup from '../CarouselComponents/ArrowGroup'
 import './MainPagePartnersCarousel.scss'
 import { IMainPagePartnersCarousel } from './Types'
+import Arrow from '../CarouselComponents/Arrow'
 
 const MainPagePartnersCarousel: React.FC<IMainPagePartnersCarousel> = ({ partners }): JSX.Element => {
-  const responsive = {
-    mobile: {
-      breakpoint: { max: 767, min: 0 },
-      items: 1
-    },
-    tablet: {
-      breakpoint: { max: Infinity, min: 768 },
-      items: 6
-    }
-  }
+  const carousel = useRef()
   return (
-    <Carousel responsive={responsive} containerClass="partners-carousel" customButtonGroup={<CarouselButtonGroup />}>
-      {partners.map(({ id, image: { childImageSharp: { fluid: { src } } } }) => (
-        <MainPagePartnerItem key={id} imageSrc={src} />
-      ))}
-    </Carousel>
+    <div className="partners-carousel">
+      <AliceCarousel
+        buttonsDisabled
+        dotsDisabled
+        infinite={false}
+        responsive={{
+          767: { items: partners.length }
+        }}
+        ref={carousel}
+      >
+        {partners.map(({ id, image: { childImageSharp: { fluid: { src } } } }) => (
+          <MainPagePartnerItem key={id} imageSrc={src} />
+        ))}
+      </AliceCarousel>
+      <Arrow className="carousel-button-left" onClick={() => carousel.current.slidePrev()} />
+      <Arrow className="carousel-button-right" onClick={() => carousel.current.slideNext()} />
+    </div>
   )
 }
 

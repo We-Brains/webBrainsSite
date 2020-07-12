@@ -64,14 +64,17 @@
   .main-page-portfolio-carousel-item {
     width: 270px;
     height: 200px;
-    transition: opacity 0.3s;
+    margin: 0 auto;
+    transition: height 0.4s, width 0.4s;
     &-header,
     &-link,
     &-info {
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.4s;
     }
-    .current-slide & {
+    .__active & {
+      width: 350px;
+      height: 250px;
       &-header,
       &-link,
       &-info {
@@ -94,34 +97,23 @@
 }
 
 @media only screen and (min-width: 1600px) {
-  .main-page-portfolio-container {
-    .react-multi-carousel-item {
+  .main-page-portfolio-carousel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 500px;
+    height: 300px;
+    .__active & {
+      width: 600px;
       height: 350px;
-      .main-page-portfolio-carousel-item {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        width: 500px;
-        height: 300px;
-        &-link {
-          width: min-content;
-        }
+      &-header,
+      &-info {
+        margin-bottom: 30px;
+        font-size: var(--font-20);
       }
-      &--active {
-        height: 350px;
-        & ~ .react-multi-carousel-item {
-          transform: translateX(-50%);
-        }
-        .main-page-portfolio-carousel-item {
-          min-width: 600px;
-          height: 350px;
-          &-header,
-          &-info {
-            margin-bottom: 30px;
-            font-size: var(--font-20);
-          }
-        }
-      }
+    }
+    &-link {
+      width: min-content;
     }
   }
 }

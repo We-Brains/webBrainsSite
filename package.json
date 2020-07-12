@@ -3,9 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"author": "MMesyats<mmesyatz@gmail.com>",
-	"keywords": [
-		"gatsby"
-	],
+	"keywords": [ "gatsby" ],
 	"license": "MIT",
 	"scripts": {
 		"build": "gatsby build",
@@ -23,7 +21,6 @@
 	},
 	"dependencies": {
 		"@google-cloud/firestore": "^4.1.0",
-		"@techychan/react-responsive-carousel": "^3.2.6",
 		"classnames": "^2.2.6",
 		"dotenv": "^8.2.0",
 		"firebase": "^7.13.2",
@@ -56,16 +53,12 @@
 		"gatsby-transformer-remark": "^2.8.23",
 		"gatsby-transformer-sharp": "^2.5.10",
 		"nodemailer": "^6.4.6",
-		"nuka-carousel": "^4.7.0",
 		"preact": "^10.4.5",
 		"react": "^16.13.1",
+		"react-alice-carousel": "^1.19.3",
 		"react-dom": "^16.13.1",
-		"react-flickity-component": "^3.5.0",
 		"react-fullpage": "^0.1.19",
-		"react-helmet": "^5.2.1",
-		"react-leaf-carousel": "^2.0.3",
-		"react-multi-carousel": "^2.5.3",
-		"react-simply-carousel": "^2.1.9"
+		"react-helmet": "^5.2.1"
 	},
 	"devDependencies": {
 		"@types/classnames": "^2.2.10",
@@ -97,10 +90,7 @@
 		"typescript": "^3.8.3"
 	},
 	"stylelint": {
-		"extends": [
-			"stylelint-config-recommended",
-			"stylelint-config-rational-order"
-		],
+		"extends": [ "stylelint-config-recommended", "stylelint-config-rational-order" ],
 		"plugins": [
 			"stylelint-order",
 			"stylelint-scss",
@@ -121,14 +111,7 @@
 					"severity": "warning"
 				}
 			],
-			"sh-waqar/declaration-use-variable": [
-				[
-					"/color/",
-					"font-size",
-					"font-family",
-					"font-weight"
-				]
-			],
+			"sh-waqar/declaration-use-variable": [ [ "/color/", "font-size", "font-family", "font-weight" ] ],
 			"order/properties-order": [],
 			"plugin/rational-order": [
 				true,
@@ -140,9 +123,7 @@
 			"selector-type-no-unknown": [
 				true,
 				{
-					"ignore": [
-						"custom-elements"
-					]
+					"ignore": [ "custom-elements" ]
 				}
 			],
 			"no-descending-specificity": true,

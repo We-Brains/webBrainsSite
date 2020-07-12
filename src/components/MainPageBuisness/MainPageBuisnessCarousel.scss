@@ -1,32 +1,29 @@
-.main-page-buissness-carousel {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-}
-
 @media only screen and (min-width: 768px) {
-  .main-page-buissness-carousel {
-    padding: 15px;
+  .buisness-carousel {
     max-width: 580px;
-
-    .react-multi-carousel-track {
+    margin-top: 0;
+    padding: 15px;
+    .alice-carousel__stage {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
       grid-gap: 20px;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       transform: none !important;
+      &-item {
+        width: 100% !important;
+        &.__cloned {
+          display: none;
+        }
+      }
     }
-    .carousel-button-group {
+    .carousel-button {
       display: none;
-    }
-    .react-multi-carousel-item {
-      width: auto !important;
     }
   }
 }
 
 @media only screen and (min-width: 1366px) {
-  .main-page-buissness-carousel {
+  .buisness-carousel {
     max-width: 700px;
   }
 }

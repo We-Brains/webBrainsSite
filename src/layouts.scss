@@ -14,6 +14,10 @@
   --timeline-color: rgba(255, 255, 255, 0.4);
   --white-transparent-color: rgba(255, 255, 255, 0.6);
   --shadow-color: rgba(29, 26, 29, 0.6);
+  --call-btn-1: rgba(128, 91, 233, 1);
+  --call-btn-2: rgba(128, 91, 233, 0.65);
+  --call-btn-3: rgba(128, 91, 233, 0.45);
+
   --transparent: transparent;
   //containers
 
@@ -154,28 +158,27 @@ h3 {
   list-style-type: none;
 }
 
-.react-multi-carousel-dot {
+.alice-carousel__dots-item {
+  width: 10px;
+  height: 10px;
   margin: 0 10px;
   list-style: none;
-
-  & button {
-    width: 10px;
-    height: 10px;
-    background-color: var(--transparent);
-    border: 1px solid var(--white-color);
-    border-radius: 100%;
-  }
+  background-color: var(--transparent);
+  border: 1px solid var(--white-color);
+  border-radius: 100%;
   &-list {
     display: flex;
     justify-content: center;
     margin-top: 40px;
   }
-  &--active {
-    & button {
-      background-color: var(--violet-color);
-      border-color: var(--violet-color);
-    }
+  &.__active {
+    background-color: var(--violet-color);
+    border-color: var(--violet-color);
   }
+}
+
+.carousel-container {
+  position: relative;
 }
 
 .default {
