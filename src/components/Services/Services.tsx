@@ -4,7 +4,7 @@ import BackIcon from '../../assets/images/arrow.long.yellow.inline.svg'
 import ServiceItem from './ServiceItem'
 import ServiceItemFull from './ServiceItemFull'
 import './Services.scss'
-import { IServices } from './Types'
+import { IServices, IServicesQuery } from './Types'
 
 const SERVICES_QUERY = graphql`
   query servicesQuery {
@@ -25,10 +25,10 @@ const SERVICES_QUERY = graphql`
   }
 `
 
-const Services: React.FC = (): JSX.Element => {
+const Services: React.FC<IServices> = ({ isMain = true }): JSX.Element => {
   const {
     allStrapiOfferTypes: { offerTypes }
-  }: IServices = useStaticQuery(SERVICES_QUERY)
+  }: IServicesQuery = useStaticQuery(SERVICES_QUERY)
   const [currentType, setType] = useState<number>(0)
   const [currentService, setService] = useState<number>(0)
   const [currentScreen, setScreen] = useState<string>('first')
@@ -36,7 +36,11 @@ const Services: React.FC = (): JSX.Element => {
   return (
     <div className={`service-selector-container service-selector-column-${currentScreen}`}>
       <div className="service-selector-column">
-        <div className="yellow-btn">Все работы</div>
+        {isMain ? (
+          <div className="yellow-btn">Все работы</div>
+        ) : (
+          <h4 className="service-selector-column-header">Что мы можем Вам предложить?</h4>
+        )}
         {offerTypes.map(({ id, title }, idx) => (
           <ServiceItem
             title={title}

@@ -9,6 +9,10 @@ export interface IServiceItemFull {
 }
 
 export interface IServices {
+  isMain?: boolean
+}
+
+export interface IServicesQuery {
   allStrapiOfferTypes: { offerTypes: IOfferType[] }
 }
 

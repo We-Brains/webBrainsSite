@@ -244,6 +244,9 @@
 
 @media only screen and (min-width: 1366px) {
   .footer {
+    &-container {
+      padding: 50px;
+    }
     &-column-3 {
       display: block;
       grid-row: 1 / span 3;

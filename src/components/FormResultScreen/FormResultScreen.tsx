@@ -46,28 +46,36 @@ const FormResultScreen: React.FC = (): JSX.Element => {
               />
             ))}
           </div>
-        </div>
-        <div className="form-result-contacts">
-          <h3 className="form-result-contacts-header">{contactTitle}</h3>
-          <ul className="form-result-contacts-list">
-            {contacts.map(({ id, title: linkTitle, additionalClass, href }) => (
-              <li
-                key={id}
-                className={`form-result-contacts-list-item ${additionalClass !== 'undefined' &&
-                  `form-result-contacts-list-item-${additionalClass}`}`}
-              >
-                <a href={href} title={linkTitle}>
-                  {linkTitle}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="default-socials-stick" />
+          <div className="form-result-contacts">
+            <h3 className="form-result-contacts-header">{contactTitle}</h3>
+            <ul className="form-result-contacts-list">
+              {contacts.map(({ id, title: linkTitle, additionalClass, href }) => (
+                <li
+                  key={id}
+                  className={`form-result-contacts-list-item ${additionalClass !== 'undefined' &&
+                    `form-result-contacts-list-item-${additionalClass}`}`}
+                >
+                  <a href={href} title={linkTitle}>
+                    {linkTitle}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {typeof window !== 'undefined' && window.innerWidth >= 1366 && (
+            <Link className="yellow-btn" to="/">
+              {btnText}
+            </Link>
+          )}
         </div>
       </div>
       <div className="form-result-svg" dangerouslySetInnerHTML={{ __html: svg }} />
-      <Link className="yellow-btn" to="/">
-        {btnText}
-      </Link>
+      {typeof window !== 'undefined' && window.innerWidth < 1366 && (
+        <Link className="yellow-btn" to="/">
+          {btnText}
+        </Link>
+      )}
     </div>
   )
 }

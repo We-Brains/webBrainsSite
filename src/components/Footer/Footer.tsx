@@ -44,7 +44,7 @@ const Footer: React.FC = (): JSX.Element => {
           </div>
           <FooterSocials socials={socials} />
           <div className="footer-copyright">{copyright}</div>
-          {typeof window !== 'undefined' && window.innerWidth > 1366 && (
+          {typeof window !== 'undefined' && window.innerWidth >= 1366 && (
             <div className="footer-column-3">
               <Form />
             </div>

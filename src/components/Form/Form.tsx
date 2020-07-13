@@ -4,6 +4,7 @@ import CubesSVG from '../../assets/images/cubes.inline.svg'
 import './Form.scss'
 
 const Form = () => {
+  const [isSended, changeSended] = useState(false)
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [errFields, changeErrFields] = useState<string[]>([])
@@ -11,19 +12,26 @@ const Form = () => {
   const send = (e: React.MouseEvent) => {
     e.preventDefault()
     if (name.length > 2 && /^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(phone)) {
+      changeSended(true)
+      const url = 'https://46.101.171.146:88/sendMessage'
       const body = {
         name,
         phone
       }
-      fetch('/api/sendMail', {
+      fetch(url, {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify(body)
       })
         .then(response => {
           navigate('/thanks')
         })
         .catch(err => {})
-        .finally(() => {})
+        .finally(() => {
+          changeSended(false)
+        })
     } else {
       const tmp = []
       if (name.length < 2) tmp.push(name)
@@ -34,7 +42,7 @@ const Form = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handlePhoneMaskedInput = (e: any) => {
-    if (!['Backspace', 'ArrowLeft', 'ArrowRight'].includes(e.code)) {
+    if (![46, 8, 37, 39].includes(e.keyCode)) {
       e.preventDefault()
       const mask = '+38 (111) 111-11-11'
       if (/[0-9+ \-()]/.test(e.key)) {
@@ -54,6 +62,8 @@ const Form = () => {
           }
         }
       }
+    } else if ([46, 8].includes(e.keyCode)) {
+      setPhone(phone.slice(0, -1))
     }
   }
 
@@ -82,7 +92,7 @@ const Form = () => {
       </div>
       <CubesSVG />
       <div className="form-fields-wrapper form-fields-wrapper-button ">
-        <input className="form-fields-submit" type="submit" value="ОТПРАВИТЬ ЗАЯВКУ НА ПРОЕКТ" onClick={send} />
+        <input className="form-fields-submit" type="submit" disabled={isSended} value="ОТПРАВИТЬ ЗАЯВКУ НА ПРОЕКТ" onClick={send} />
       </div>
     </form>
   )

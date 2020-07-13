@@ -12,6 +12,13 @@
     .yellow-btn {
       margin-bottom: 15px;
     }
+    &-header {
+      margin: 20px 25px;
+      color: var(--white-color);
+      font-weight: var(--font-weight-900);
+      font-size: var(--font-18);
+      font-family: var(--font-oswald);
+    }
     &-first {
       transform: translateX(0);
     }
