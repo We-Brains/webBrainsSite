@@ -9,7 +9,7 @@ declare module '*.module.scss' {
   export = cssModule
 }
 
-declare module '*.module.css' {
+declare module '*.css' {
   const cssModule: CSSModule
   export = cssModule
 }
@@ -17,6 +17,21 @@ declare module '*.module.css' {
 declare module '*.inline.svg' {
   const content: string
   export default content
+}
+
+declare module 'react-alice-carousel' {
+  export interface IAliceCarousel {
+    duration?: number
+    ref: React.Ref
+    buttonsDisabled?: boolean
+    dotsDisabled?: boolean
+    infinite?: boolean
+    responsive?: any
+    slideNext?: () => void
+    slidePrev?: () => void
+  }
+  const AliceCarousel: React.CC<IAliceCarousel>
+  export default AliceCarousel
 }
 
 declare module 'react-fullpage' {

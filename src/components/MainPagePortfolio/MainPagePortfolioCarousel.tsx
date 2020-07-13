@@ -1,6 +1,5 @@
-/* eslint-disable no-nested-ternary */
 import React, { useRef } from 'react'
-import AliceCarousel from 'react-alice-carousel'
+import AliceCarousel, { IAliceCarousel } from 'react-alice-carousel'
 import MainPagePortfolioCarouselItem from './MainPagePortfolioCarouselItem'
 import { IPortfolioCarousel } from './Types'
 import Arrow from '../CarouselComponents/Arrow'
@@ -8,7 +7,7 @@ import './MainPagePortfolioCarousel.scss'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
 const MainPagePortfolioCarousel: React.FC<IPortfolioCarousel> = ({ portfolios }): JSX.Element => {
-  const carousel = useRef()
+  const carousel = useRef<IAliceCarousel>()
   return (
     <>
       <div className="carousel-container">
