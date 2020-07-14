@@ -6,11 +6,11 @@
       &__stage {
         display: flex;
         align-items: center;
-        min-height: 250px;
+        min-height: 300px;
         &-item {
           z-index: 5;
           min-width: 100%;
-          transform: translateX(80%) !important;
+          transform: translateX(70%) !important;
           transition: inherit;
           & * {
             transition-duration: inherit;
@@ -19,7 +19,7 @@
             z-index: 10;
             transform: translateX(0%) !important;
             & ~ .alice-carousel__stage-item {
-              transform: translateX(-80%) !important;
+              transform: translateX(-70%) !important;
             }
           }
         }
@@ -32,7 +32,7 @@
   .main-page-portfolio-container {
     .alice-carousel {
       &__stage {
-        min-height: 350px;
+        min-height: 400px;
       }
     }
   }

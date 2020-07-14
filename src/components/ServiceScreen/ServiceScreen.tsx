@@ -1,5 +1,7 @@
 import React from 'react'
 import Services from '../Services/Services'
+import './ServiceScreen.scss'
+import Socials from '../DefaultComponents/Socials'
 
 const ServiceScreen: React.FC = (): JSX.Element => {
   return (
@@ -8,6 +10,7 @@ const ServiceScreen: React.FC = (): JSX.Element => {
         <h2 className="default-header">Услуги.</h2>
         <h4 className="default-header-sub">Мы делаем проект с Вами, а не для Вас</h4>
       </div>
+      <Socials />
       <Services isMain={false} />
     </div>
   )

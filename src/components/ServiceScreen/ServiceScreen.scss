@@ -1,0 +1,13 @@
+@media only screen and (min-width: 768px) {
+  .service-screen {
+    display: grid;
+    grid-row-gap: 50px;
+    grid-template-columns: auto min-content;
+    justify-content: center;
+    height: 100%;
+    padding: 90px 0 50px;
+    .service-selector-container {
+      grid-column: 1 / span 2;
+    }
+  }
+}

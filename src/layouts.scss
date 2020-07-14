@@ -127,6 +127,7 @@ h3 {
 .screen {
   position: relative;
   max-height: 100vh;
+  overflow: hidden !important;
   &-gray {
     background-color: var(--dark-gray-2f-color);
   }
