@@ -108,7 +108,7 @@ module.exports = {
 		'gatsby-plugin-sass',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-react-helmet',
-		//`gatsby-plugin-preact`,
-		'gatsby-plugin-zopfli'
+		'gatsby-plugin-zopfli',
+		'gatsby-plugin-optimize-svgs'
 	]
 };

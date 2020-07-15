@@ -226,4 +226,15 @@
       }
     }
   }
+  .service-screen {
+    .service-full {
+      &-text {
+        font-size: var(--font-20);
+      }
+      &-info {
+        margin: 0;
+        font-size: var(--font-18);
+      }
+    }
+  }
 }

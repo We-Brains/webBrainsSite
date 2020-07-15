@@ -24,6 +24,8 @@
     font-family: var(--font-roboto);
     background-color: var(--transparent);
     border: 1px solid var(--white-color);
+    user-select: all;
+    pointer-events: all;
     &-error {
       color: var(--yellow-color);
       border: 1px solid var(--yellow-color);

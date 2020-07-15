@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
-import AliceCarousel from 'react-alice-carousel'
+import AliceCarousel, { IAliceCarousel } from 'react-alice-carousel'
 import Arrow from '../CarouselComponents/Arrow'
 import ServiceItem from './ServiceItem'
 import { IServiceCarousel } from './Types'
 import './ServiceCarousel.scss'
 
 const ServiceCarousel: React.FC<IServiceCarousel> = ({ services }): JSX.Element => {
-  const carousel = useRef()
+  const carousel = useRef<IAliceCarousel>()
   return (
     <div className="carousel-container">
       <AliceCarousel

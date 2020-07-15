@@ -14,6 +14,9 @@
       svg {
         height: inherit;
       }
+      &-svg-black {
+        display: none;
+      }
     }
   }
 }
@@ -41,6 +44,14 @@
       &-link {
         width: 100%;
         height: 100%;
+        &-svg {
+          &-white {
+            display: none;
+          }
+          &-black {
+            display: block;
+          }
+        }
       }
     }
   }

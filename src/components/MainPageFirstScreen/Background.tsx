@@ -5,14 +5,17 @@ import { IBackground } from './Types'
 const Background: React.FC<IBackground> = ({
   background: {
     childImageSharp: {
-      fluid: { src }
+      fluid: { src, srcWebp }
     }
   }
 }): JSX.Element => {
   return (
     <div className="bg">
       <div className="bg-filled" />
-      <div className="bg-img" style={{ backgroundImage: `url(${src})` }} />
+      <picture className="bg-img">
+        <source src={srcWebp} type="image/webp" />
+        <img src={src} alt="background" />
+      </picture>
     </div>
   )
 }

@@ -27,6 +27,7 @@ export interface IImage {
   childImageSharp: {
     fluid: {
       src: string
+      srcWebp?: string
     }
   }
   name?: string

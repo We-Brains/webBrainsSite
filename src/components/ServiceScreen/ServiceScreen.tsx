@@ -10,7 +10,9 @@ const ServiceScreen: React.FC = (): JSX.Element => {
         <h2 className="default-header">Услуги.</h2>
         <h4 className="default-header-sub">Мы делаем проект с Вами, а не для Вас</h4>
       </div>
+      <h4 className="service-screen-header-add">Что мы можем Вам предложить?</h4>
       <Socials />
+      <div className="default-socials-stick" />
       <Services isMain={false} />
     </div>
   )

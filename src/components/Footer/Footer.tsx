@@ -6,6 +6,7 @@ import FooterContactBtn from './FooterContactBtn'
 import FooterSocials from './FooterSocials'
 import Form from '../Form/Form'
 import { IFooterQuery } from './Types'
+import LogoSVG from '../../assets/images/logo.white.inline.svg'
 
 const FooterMap = React.lazy(() => import('./FooterMap'))
 
@@ -36,7 +37,9 @@ const Footer: React.FC = (): JSX.Element => {
   return (
     <footer className="footer">
       <div className="default-container footer-container">
-        <div className="footer-logo" />
+        <div className="footer-svg">
+          <LogoSVG />
+        </div>
         <div className="footer-grid">
           <FooterContacts contacts={contacts} />
           <div className="footer-column-2">

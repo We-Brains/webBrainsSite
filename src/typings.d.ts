@@ -15,7 +15,10 @@ declare module '*.css' {
 }
 
 declare module '*.inline.svg' {
-  const content: string
+  const content: ReactFC<ISVG>
+  export interface ISVG {
+    className: string
+  }
   export default content
 }
 
