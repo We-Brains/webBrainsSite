@@ -1,5 +1,6 @@
 /* eslint-disable */
 const React = require('react');
+require('dotenv').config();
 
 exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
 	if (process.env.NODE_ENV === `production`) {

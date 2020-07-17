@@ -7,7 +7,7 @@ module.exports = {
 		title: 'Разработка сайтов, онлайн магазинов с дизайном под ключ. WebBrains Studio.',
 		description:
 			'Веб-студия полного цикла по созданию сайтов, лендингов, интернет-магазинов с уникальным дизайном и анализом ниши. На рынке 3 года. Закажи качественный онлайн продукт под ключ',
-		siteUrl: 'https://webbrains-489b6.web.app/',
+		siteUrl: 'https://webrains.studio/',
 		pathPrefix: '/',
 		author: {
 			name: 'MMesyats',

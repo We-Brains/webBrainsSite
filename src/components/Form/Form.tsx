@@ -13,7 +13,7 @@ const Form = () => {
     e.preventDefault()
     if (name.length > 2 && /^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(phone)) {
       changeSended(true)
-      const url = 'https://46.101.171.146:88/sendMessage'
+      const url = 'https://admin.webrains.studio/sendWBMessage'
       const body = {
         name,
         phone
