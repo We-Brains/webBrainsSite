@@ -7,7 +7,7 @@ module.exports = {
 		title: 'Разработка сайтов, онлайн магазинов с дизайном под ключ. WebBrains Studio.',
 		description:
 			'Веб-студия полного цикла по созданию сайтов, лендингов, интернет-магазинов с уникальным дизайном и анализом ниши. На рынке 3 года. Закажи качественный онлайн продукт под ключ',
-		siteUrl: 'https://webrains.studio/',
+		siteUrl: 'https://webrains.studio',
 		pathPrefix: '/',
 		author: {
 			name: 'MMesyats',
@@ -72,12 +72,6 @@ module.exports = {
 			}
 		},
 		{
-			resolve: 'gatsby-plugin-canonical-urls',
-			options: {
-				siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
-			}
-		},
-		{
 			resolve: 'gatsby-plugin-react-svg',
 			options: {
 				rule: {
@@ -103,12 +97,41 @@ module.exports = {
 				icon: 'src/assets/images/favicon.png'
 			}
 		},
+		{
+			resolve: 'gatsby-plugin-sitemap',
+			options: {
+				query: `
+          {
+            site {
+              siteMetadata { siteUrl }
+            }
+            allSitePage {
+              edges {
+                node {
+                  path
+
+                }
+              }
+            }
+          }
+        `,
+				serialize: ({ site: { siteMetadata: { siteUrl } }, allSitePage }) => {
+					return allSitePage.edges.map(({ node: { path } }) => {
+						const res = {
+							url: siteUrl + path,
+							changefreq: 'daily',
+							priority: 0.7
+						};
+						return res;
+					});
+				}
+			}
+		},
 		'gatsby-plugin-typescript',
 		'gatsby-plugin-sharp',
 		'gatsby-plugin-sass',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-zopfli',
-		'gatsby-plugin-optimize-svgs'
+		'gatsby-plugin-zopfli'
 	]
 };
