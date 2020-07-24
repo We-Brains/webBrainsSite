@@ -1,29 +1,22 @@
-import React, { useRef } from 'react'
-import AliceCarousel from 'react-alice-carousel'
+import React from 'react'
 import MainPagePartnerItem from './MainPagePartnerItem'
 import './MainPagePartnersCarousel.scss'
 import { IMainPagePartnersCarousel } from './Types'
 import Arrow from '../CarouselComponents/Arrow'
+import Carousel from '../Carousel/Carousel'
 
 const MainPagePartnersCarousel: React.FC<IMainPagePartnersCarousel> = ({ partners }): JSX.Element => {
-  const carousel = useRef()
   return (
     <div className="partners-carousel">
-      <AliceCarousel
-        buttonsDisabled
-        dotsDisabled
-        infinite={false}
-        responsive={{
-          767: { items: partners.length }
-        }}
-        ref={carousel}
+      <Carousel
+        infinity={false}
+        buttonPrev={<Arrow className="carousel-button-left" />}
+        buttonNext={<Arrow className="carousel-button-right" />}
       >
-        {partners.map(({ id, image: { childImageSharp: { fluid: { src } } } }) => (
-          <MainPagePartnerItem key={id} imageSrc={src} />
+        {partners.map(({ id, image: { childImageSharp: { fluid: { srcSet, srcSetWebp } } } }) => (
+          <MainPagePartnerItem key={id} srcSet={srcSet} srcSetWebp={srcSetWebp} />
         ))}
-      </AliceCarousel>
-      <Arrow className="carousel-button-left" onClick={() => carousel.current.slidePrev()} />
-      <Arrow className="carousel-button-right" onClick={() => carousel.current.slideNext()} />
+      </Carousel>
     </div>
   )
 }

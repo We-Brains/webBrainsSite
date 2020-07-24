@@ -17,5 +17,6 @@ export interface IPartners {
 }
 
 export interface IMainPagePartnerItem {
-  imageSrc: string
+  srcSet: string
+  srcSetWebp: string
 }

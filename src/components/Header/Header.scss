@@ -1,4 +1,5 @@
 .header {
+  z-index: 1000;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -13,9 +14,24 @@
       height: 100%;
       svg {
         height: inherit;
+        overflow: visible;
       }
       &-svg-black {
         display: none;
+      }
+    }
+  }
+  &-black {
+    background-color: var(--dark-gray-1d-color);
+    .header-logo {
+      &-link {
+        &-svg-white {
+          display: block;
+        }
+
+        &-svg-black {
+          display: none;
+        }
       }
     }
   }
@@ -24,6 +40,9 @@
 @media only screen and (min-height: 600px) {
   .header {
     padding: 25px 15px;
+    &-logo {
+      height: 50px;
+    }
   }
 }
 
@@ -40,6 +59,9 @@
     width: 100%;
     padding: 10px 15px;
     background-color: var(--white-color);
+    &-black {
+      background-color: var(--dark-gray-1d-color);
+    }
     &-logo {
       &-link {
         width: 100%;

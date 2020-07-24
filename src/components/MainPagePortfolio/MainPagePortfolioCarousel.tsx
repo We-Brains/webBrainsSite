@@ -1,24 +1,35 @@
-import React, { useRef, Suspense } from 'react'
-import AliceCarousel, { IAliceCarousel } from 'react-alice-carousel'
+import React, { useState } from 'react'
 import { IPortfolioCarousel } from './Types'
+import Carousel from '../Carousel/Carousel'
 import MainPagePortfolioCarouselItem from './MainPagePortfolioCarouselItem'
 import Arrow from '../CarouselComponents/Arrow'
 import './MainPagePortfolioCarousel.scss'
-import 'react-alice-carousel/lib/alice-carousel.css'
 
 const MainPagePortfolioCarousel: React.FC<IPortfolioCarousel> = React.memo(
   ({ portfolios }): JSX.Element => {
-    const carousel = useRef<IAliceCarousel>()
+    const [active, chageActive] = useState(2)
     return (
       <>
         <div className="carousel-container">
-          <AliceCarousel duration={250} ref={carousel} buttonsDisabled>
-            {portfolios.map(({ id, title, content, image }) => (
-              <MainPagePortfolioCarouselItem key={id} title={title} content={content} image={image} />
+          <Carousel
+            infinity
+            withDots
+            buttonPrev={<Arrow className="carousel-button-left" />}
+            buttonNext={<Arrow className="carousel-button-right" />}
+          >
+            {portfolios.map(({ id, title, type, image, caseImage, link }, idx) => (
+              <MainPagePortfolioCarouselItem
+                key={id}
+                title={title}
+                type={type}
+                image={image}
+                link={link}
+                caseImage={caseImage}
+                className={`${active === idx ? 'main-page-portfolio-carousel-item-active' : ''}`}
+                onHover={() => chageActive(idx)}
+              />
             ))}
-          </AliceCarousel>
-          <Arrow className="carousel-button-left" onClick={() => carousel.current.slidePrev()} />
-          <Arrow className="carousel-button-right" onClick={() => carousel.current.slideNext()} />
+          </Carousel>
         </div>
       </>
     )

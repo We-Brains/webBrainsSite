@@ -1,5 +1,17 @@
-.carousel-container {
+.carousel {
   margin-top: 20px;
+  &-buttons {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    & * {
+      pointer-events: all;
+    }
+  }
 }
 
 .stick {
@@ -12,7 +24,7 @@
 
 @media only screen and (min-height: 650px) {
   .main-page {
-    .carousel-container {
+    .carousel {
       margin-top: 50px;
       .service-item {
         height: 273px;
@@ -24,7 +36,7 @@
 
 @media only screen and (min-height: 760px) {
   .main-page {
-    .carousel-container {
+    .carousel {
       margin-top: 70px;
 
       .service-item {
@@ -43,47 +55,40 @@
     .carousel-button {
       display: none;
     }
-    .alice-carousel {
+    .carousel {
       padding: 0 20px;
       .service-item {
         height: 100%;
       }
-      &__stage {
+      &-list {
         position: relative;
-        display: grid !important;
+        display: grid;
         grid-column-gap: 20px;
         grid-template-columns: repeat(3, 1fr);
-        width: 100% !important;
+        width: 100%;
         padding: 0;
         transform: none !important;
         &-item {
-          width: 100% !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          &:nth-of-type(n + 4) {
-            display: none;
-          }
+          width: 100%;
+          visibility: visible;
+          opacity: 1;
         }
-      }
-      &Slide {
-        width: auto !important;
-        margin: 0 !important;
       }
     }
   }
 }
 
 @media only screen and (min-width: 1366px) {
-  .main-page .alice-carousel {
+  .main-page .carousel {
     padding: 0 170px;
-    &__stage {
+    &-list {
       grid-column-gap: 50px;
     }
   }
 }
 
 @media only screen and (min-width: 1600px) {
-  .main-page .alice-carousel {
+  .main-page .carousel {
     grid-column-gap: 90px;
   }
 }

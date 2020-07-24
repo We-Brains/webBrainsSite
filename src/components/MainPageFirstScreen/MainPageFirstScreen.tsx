@@ -15,7 +15,6 @@ const FIRST_SCREEN_QUERY = graphql`
         childImageSharp {
           fluid {
             src
-            srcWebp
           }
         }
       }

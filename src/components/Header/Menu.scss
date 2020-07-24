@@ -19,6 +19,9 @@
     font-family: var(--font-roboto);
     font-style: normal;
     line-height: 18px;
+    .header-black & {
+      color: var(--white-color);
+    }
 
     &.current::after {
       position: absolute;

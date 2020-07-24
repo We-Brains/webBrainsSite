@@ -1,30 +1,22 @@
-import React, { useRef } from 'react'
-import AliceCarousel from 'react-alice-carousel'
-import CarouselButtonGroup from '../CarouselComponents/ArrowGroup'
+import React from 'react'
 import MainPageBuisnessItem from './MainPageBuisnessItem'
 import './MainPageBuisnessCarousel.scss'
 import { IMainPageBuisnessCarousel } from './Types'
 import Arrow from '../CarouselComponents/Arrow'
+import Carousel from '../Carousel/Carousel'
 
 const MainPageBuisnessCarousel: React.FC<IMainPageBuisnessCarousel> = ({ buissnesses }) => {
-  const carousel = useRef()
   return (
     <div className="buisness-carousel carousel-container">
-      <AliceCarousel
-        buttonsDisabled
-        dotsDisabled
-        infinite={false}
-        responsive={{
-          767: { items: 4 }
-        }}
-        ref={carousel}
+      <Carousel
+        infinity={false}
+        buttonPrev={<Arrow className="carousel-button-left" />}
+        buttonNext={<Arrow className="carousel-button-right" />}
       >
         {buissnesses.map(({ id, title, content, svg }) => (
           <MainPageBuisnessItem key={id} title={title} content={content} svg={svg} />
         ))}
-      </AliceCarousel>
-      <Arrow className="carousel-button-left" onClick={() => carousel.current.slidePrev()} />
-      <Arrow className="carousel-button-right" onClick={() => carousel.current.slideNext()} />
+      </Carousel>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { IDefaultSocialQuery } from './Types'
+import { IDefaultSocialQuery, IDefaultSocials } from './Types'
 
 const DEFAULT_SOCIAL_QUERY = graphql`
   query DefaultSocialQuery {
@@ -15,7 +15,7 @@ const DEFAULT_SOCIAL_QUERY = graphql`
   }
 `
 
-const Socials: React.FC = ({ className = '' }): JSX.Element => {
+const Socials: React.FC<IDefaultSocials> = ({ className = '' }): JSX.Element => {
   const {
     allStrapiSocials: { nodes: socials }
   }: IDefaultSocialQuery = useStaticQuery(DEFAULT_SOCIAL_QUERY)

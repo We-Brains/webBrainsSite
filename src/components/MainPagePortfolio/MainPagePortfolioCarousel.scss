@@ -1,39 +1,41 @@
+.carousel {
+  &-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .main-page-portfolio-container {
-    .alice-carousel {
+    .carousel {
       position: relative;
-      width: 100%;
-      &__stage {
-        display: flex;
+      width: 100vw;
+      overflow: visible;
+      &-button,
+      &-dots {
+        display: none;
+      }
+      &-list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
         align-items: center;
-        min-height: 300px;
-        &-item {
-          z-index: 5;
-          min-width: 100%;
-          transform: translateX(70%) !important;
-          transition: inherit;
-          & * {
-            transition-duration: inherit;
-          }
-          &.__active {
-            z-index: 10;
-            transform: translateX(0%) !important;
-            & ~ .alice-carousel__stage-item {
-              transform: translateX(-70%) !important;
-            }
-          }
+        width: 100%;
+        min-height: 450px;
+        transform: none !important;
+        &-item:first-of-type,
+        &-item:last-of-type {
+          display: none;
         }
       }
     }
   }
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1366px) {
   .main-page-portfolio-container {
-    .alice-carousel {
-      &__stage {
-        min-height: 400px;
-      }
+    .carousel-list {
+      min-height: 550px;
     }
   }
 }

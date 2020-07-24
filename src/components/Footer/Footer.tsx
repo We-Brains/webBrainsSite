@@ -5,7 +5,7 @@ import FooterContacts from './FooterContacts'
 import FooterContactBtn from './FooterContactBtn'
 import FooterSocials from './FooterSocials'
 import Form from '../Form/Form'
-import { IFooterQuery } from './Types'
+import { IFooterQuery, IFooter } from './Types'
 import LogoSVG from '../../assets/images/logo.white.inline.svg'
 
 const FooterMap = React.lazy(() => import('./FooterMap'))
@@ -30,31 +30,37 @@ const FOOTER_QUERY = graphql`
   }
 `
 
-const Footer: React.FC = (): JSX.Element => {
+const Footer: React.FC<IFooter> = ({ isSingle = false }): JSX.Element => {
   const {
     strapiFooterScreen: { copyright, socials, contacts }
   }: IFooterQuery = useStaticQuery(FOOTER_QUERY)
   return (
-    <footer className="footer">
+    <footer className={`footer ${isSingle ? 'footer-single' : ''}`}>
       <div className="default-container footer-container">
-        <div className="footer-svg">
-          <LogoSVG />
-        </div>
+        {!isSingle && (
+          <div className="footer-svg">
+            <LogoSVG />
+          </div>
+        )}
         <div className="footer-grid">
+          {isSingle && (
+            <div className="footer-headers">
+              <h1 className="default-header">Контакты</h1>
+              <h3 className="default-header-sub">свяжитесь с нами любым удобным способом</h3>
+            </div>
+          )}
           <FooterContacts contacts={contacts} />
           <div className="footer-column-2">
             <FooterContactBtn />
           </div>
           <FooterSocials socials={socials} />
-          <div className="footer-copyright">{copyright}</div>
-          {typeof window !== 'undefined' && window.innerWidth >= 1366 && (
-            <div className="footer-column-3">
-              <Form />
-            </div>
-          )}
+          {!isSingle && <div className="footer-copyright">{copyright}</div>}
+          <div className="footer-column-3">
+            <Form />
+          </div>
         </div>
       </div>
-      {typeof window !== 'undefined' && window.innerWidth > 768 && (
+      {typeof window !== 'undefined' && window.innerWidth >= 768 && (
         <Suspense fallback={<div />}>
           <FooterMap />
         </Suspense>

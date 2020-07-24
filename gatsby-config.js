@@ -4,10 +4,10 @@ require('dotenv').config();
 
 module.exports = {
 	siteMetadata: {
-		title: 'Разработка сайтов, онлайн магазинов с дизайном под ключ. WebBrains Studio.',
+		title: 'Разработка сайтов, онлайн магазинов с дизайном под ключ. GoodPage Studio.',
 		description:
 			'Веб-студия полного цикла по созданию сайтов, лендингов, интернет-магазинов с уникальным дизайном и анализом ниши. На рынке 3 года. Закажи качественный онлайн продукт под ключ',
-		siteUrl: 'https://webrains.studio',
+		siteUrl: 'https://goodpage.studio',
 		pathPrefix: '/',
 		author: {
 			name: 'MMesyats',
@@ -23,6 +23,7 @@ module.exports = {
 				contentTypes: [
 					'services',
 					'portfolios',
+					'portfolio-types',
 					'partners',
 					'buissness',
 					'timeline-items',
@@ -32,14 +33,16 @@ module.exports = {
 					'contacts'
 				],
 				singleTypes: [
-					'first-screen',
-					'portfolio-screen',
-					'partners-screen',
+					'about-us-screen',
 					'buisness-screen',
-					'timeline-screen',
-					'service-screen',
 					'footer-screen',
-					'form-result-screen'
+					'form-result-screen',
+					'first-screen',
+					'not-found-screen',
+					'partners-screen',
+					'portfolio-screen',
+					'service-screen',
+					'timeline-screen'
 				],
 				queryLimit: 1000,
 				loginData: {
@@ -131,7 +134,6 @@ module.exports = {
 		'gatsby-plugin-sharp',
 		'gatsby-plugin-sass',
 		'gatsby-transformer-sharp',
-		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-zopfli'
+		'gatsby-plugin-react-helmet'
 	]
 };

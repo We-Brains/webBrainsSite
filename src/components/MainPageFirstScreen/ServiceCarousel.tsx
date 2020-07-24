@@ -1,29 +1,32 @@
-import React, { useRef } from 'react'
-import AliceCarousel, { IAliceCarousel } from 'react-alice-carousel'
+import React, { useContext } from 'react'
 import Arrow from '../CarouselComponents/Arrow'
 import ServiceItem from './ServiceItem'
 import { IServiceCarousel } from './Types'
 import './ServiceCarousel.scss'
+import Carousel from '../Carousel/Carousel'
+import FirstScreenContext from './FirstScreenContext'
 
 const ServiceCarousel: React.FC<IServiceCarousel> = ({ services }): JSX.Element => {
-  const carousel = useRef<IAliceCarousel>()
+  const { changeService } = useContext(FirstScreenContext)
   return (
     <div className="carousel-container">
-      <AliceCarousel
-        buttonsDisabled
-        dotsDisabled
-        infinite={false}
-        responsive={{
-          767: { items: 3 }
-        }}
-        ref={carousel}
+      <Carousel
+        infinity={false}
+        buttonPrev={<Arrow className="carousel-button-left" />}
+        buttonNext={<Arrow className="carousel-button-right" />}
       >
-        {services.map(({ id, title, svg, content }) => (
-          <ServiceItem key={id} title={title} svg={svg} content={content} />
+        {services.map(({ id, title, svg, content }, idx) => (
+          <ServiceItem
+            key={id}
+            title={title}
+            svg={svg}
+            content={content}
+            onClick={() => {
+              changeService(idx)
+            }}
+          />
         ))}
-      </AliceCarousel>
-      <Arrow className="carousel-button-left" onClick={() => carousel.current.slidePrev()} />
-      <Arrow className="carousel-button-right" onClick={() => carousel.current.slideNext()} />
+      </Carousel>
       <div className="stick" />
     </div>
   )

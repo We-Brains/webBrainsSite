@@ -9,8 +9,11 @@ export interface IPortfolioScreenQuery {
 export interface IPortfolio {
   id: string
   title: string
-  content: string
+  type: string
+  link?: string
   image: IImage
+  caseImage: IImage
+  onHover: () => void
 }
 
 export interface IPortfolioCarousel {
@@ -20,15 +23,28 @@ export interface IPortfolioCarousel {
 export interface IPortfolioSingle {
   className?: string
   title: string
-  content: string
+  type: string
+  link?: string
   image: IImage
+  caseImage: IImage
+  onHover: () => void
 }
 export interface IImage {
   childImageSharp: {
-    fluid: {
-      src: string
+    fluid?: {
+      src?: string
       srcWebp?: string
+      srcSetWebp?: string
+      srcSet?: string
+    }
+    original?: {
+      src: string
     }
   }
   name?: string
+}
+
+export interface IMainPagePortfolioItemFull {
+  changeShowCase: (arg0: boolean) => void
+  caseImage: IImage
 }

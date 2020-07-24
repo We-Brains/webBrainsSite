@@ -3,7 +3,7 @@
     max-width: 580px;
     margin-top: 0;
     padding: 15px;
-    .alice-carousel__stage {
+    .carousel-list {
       display: grid;
       grid-gap: 20px;
       grid-template-rows: 1fr 1fr;
@@ -11,9 +11,6 @@
       transform: none !important;
       &-item {
         width: 100% !important;
-        &.__cloned {
-          display: none;
-        }
       }
     }
     .carousel-button {

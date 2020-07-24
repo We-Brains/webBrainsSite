@@ -30,6 +30,7 @@ export interface IServiceItem {
   title: string
   svg: string
   content: string
+  onClick: () => void
 }
 
 export interface IBackground {

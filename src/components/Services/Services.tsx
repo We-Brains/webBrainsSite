@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import BackIcon from '../../assets/images/arrow.long.yellow.inline.svg'
 import ServiceItem from './ServiceItem'
 import ServiceItemFull from './ServiceItemFull'
 import './Services.scss'
 import { IServices, IServicesQuery } from './Types'
+import serviceContext from './ServiceContext'
 
 const SERVICES_QUERY = graphql`
   query servicesQuery {
@@ -32,6 +33,14 @@ const Services: React.FC<IServices> = ({ isMain = true }): JSX.Element => {
   const [currentType, setType] = useState<number>(0)
   const [currentService, setService] = useState<number>(0)
   const [currentScreen, setScreen] = useState<string>('first')
+  const { currentService: contextService } = useContext(serviceContext)
+  useEffect(() => {
+    if (typeof contextService !== 'undefined') {
+      setType(contextService)
+      setScreen('second')
+      setService(0)
+    } else setType(0)
+  }, [contextService])
 
   return (
     <div className={`service-selector-container service-selector-column-${currentScreen}`}>

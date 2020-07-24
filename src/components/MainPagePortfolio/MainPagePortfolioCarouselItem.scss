@@ -1,5 +1,9 @@
 .main-page-portfolio-carousel-item {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   height: 200px;
   margin: 0 40px;
   padding: 20px;
@@ -19,37 +23,38 @@
       object-fit: cover;
     }
   }
-  &-header,
-  &-link,
-  &-info {
+  &-header {
     position: relative;
     z-index: 1;
-    font-size: var(--font-10);
-    font-family: var(--font-roboto);
+    font-weight: var(--font-weight-900);
+    font-size: var(--font-20);
+    font-family: var(--font-oswald);
     line-height: initial;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  &-type {
+    position: relative;
+    z-index: 1;
+    font-weight: var(--font-weight-500);
+    font-family: var(--font-roboto);
+    text-align: center;
+    text-transform: uppercase;
   }
   &-header,
-  &-info {
-    margin-bottom: 20px;
+  &-type {
     color: var(--white-color);
   }
-  &-header {
-    font-weight: var(--font-weight-900);
-  }
-  &-link {
-    position: relative;
-    padding: 5px 0;
-    color: var(--yellow-color);
-    visibility: hidden;
-    &::after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: var(--yellow-color);
-      content: '';
-    }
+  .yellow-btn {
+    position: absolute;
+    bottom: 30px;
+    z-index: 1;
+    width: auto;
+    margin: 0 auto;
+    background-color: var(--transparent);
+    visibility: visible;
+    transition: ease-in-out opacity 0.5s;
   }
   &-shadow {
     position: absolute;
@@ -66,68 +71,56 @@
   .main-page-portfolio-carousel-item {
     height: 250px;
     padding: 25px 35px;
-    &-header,
-    &-link,
-    &-info {
-      font-size: var(--font-13);
-    }
   }
 }
 
 @media only screen and (min-width: 768px) {
   .main-page-portfolio-carousel-item {
-    width: 300px;
-    height: 250px;
+    z-index: 10;
+    width: 100%;
+    height: 400px;
     margin: 0 auto;
-    transition: height 0.4s, width 0.4s;
-    &-header,
-    &-link,
-    &-info {
-      opacity: 0;
-      transition: opacity 0.4s;
+    padding: 30px 0;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.94);
+    cursor: pointer;
+    transition: ease-in-out height 0.4s;
+    &-header {
+      font-size: var(--font-25);
     }
-    .__active & {
-      width: 450px;
-      height: 300px;
-      &-header,
-      &-link,
-      &-info {
+    &-type {
+      margin-top: 10px;
+      font-size: var(--font-15);
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &-shadow {
+      background: rgba(29, 26, 29, 0.35);
+    }
+    .yellow-btn {
+      opacity: 0;
+    }
+    &-active {
+      z-index: 20;
+      height: 450px;
+      box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.94);
+      .yellow-btn {
         opacity: 1;
       }
     }
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  .react-multi-carousel-item {
-    .main-page-portfolio-carousel-item {
-      &-header,
-      &-link,
-      &-info {
-        font-size: var(--font-18);
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1366px) {
   .main-page-portfolio-carousel-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 500px;
-    height: 300px;
-    .__active & {
-      width: 600px;
-      height: 350px;
-      &-header,
-      &-info {
-        margin-bottom: 30px;
-        font-size: var(--font-20);
-      }
+    height: 500px;
+    &-header {
+      font-size: var(--font-30);
     }
-    &-link {
-      width: min-content;
+    &-type {
+      margin-top: 10px;
+      font-size: var(--font-20);
+    }
+    &-active {
+      height: 550px;
     }
   }
 }

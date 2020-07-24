@@ -6,10 +6,11 @@ import LogoWhite from '../../assets/images/logo.white.inline.svg'
 
 import './Header.scss'
 import Menu from './Menu'
+import { IHeader } from './Types'
 
-const Header: React.FC = (): JSX.Element => {
+const Header: React.FC<IHeader> = ({ isBlack = false }): JSX.Element => {
   return (
-    <header className="header">
+    <header className={`header ${isBlack ? 'header-black' : ''}`}>
       <div className="header-logo">
         <Link to="/" className="header-logo-link">
           <Logo className="header-logo-link-svg-black" />

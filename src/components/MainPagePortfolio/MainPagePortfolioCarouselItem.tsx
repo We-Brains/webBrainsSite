@@ -1,32 +1,43 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { useState } from 'react'
 import './MainPagePortfolioCarouselItem.scss'
 import { IPortfolioSingle } from './Types'
+import MainPagePortfolioItemFull from './MainPagePortfolioItemFull'
 
 const MainPagePortfolioCarouselItem: React.FC<IPortfolioSingle> = React.memo(
   ({
+    onHover,
     className = '',
     title,
-    content,
+    type,
+    link,
+    // caseImage,
     image: {
       childImageSharp: {
-        fluid: { src, srcWebp }
+        original: { src }
       }
     }
   }): JSX.Element => {
+    // const [showCase, changeShowCase] = useState(false)
     return (
-      <div className={`main-page-portfolio-carousel-item ${className}`}>
-        <picture className="main-page-portfolio-carousel-item-background">
-          <source srcSet={srcWebp} type="image/webp" />
-          <img src={src} alt={title} />
-        </picture>
-        <div className="main-page-portfolio-carousel-item-shadow" />
-        <h4 className="main-page-portfolio-carousel-item-header">{title}</h4>
-        <p className="main-page-portfolio-carousel-item-info">{content}</p>
-        <Link className="main-page-portfolio-carousel-item-link" to="/">
-          Подробнее
-        </Link>
-      </div>
+      <>
+        <div
+          className={`main-page-portfolio-carousel-item ${className}`}
+          onMouseEnter={() => {
+            onHover()
+          }}
+          style={{
+            backgroundImage: `url(${src})`
+          }}
+        >
+          <div className="main-page-portfolio-carousel-item-shadow" />
+          <h4 className="main-page-portfolio-carousel-item-header">{title}</h4>
+          <h5 className="main-page-portfolio-carousel-item-type">{type}</h5>
+          <a className="yellow-btn" href={link} target="_blank" rel="noreferrer">
+            ПОСМОТРЕТЬ
+          </a>
+        </div>
+        {/* {showCase && <MainPagePortfolioItemFull changeShowCase={changeShowCase} caseImage={caseImage} />} */}
+      </>
     )
   }
 )

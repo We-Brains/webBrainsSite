@@ -10,7 +10,7 @@ const PARTNERTS_SCREEN_QUERY = graphql`
       text
       background {
         childImageSharp {
-          fluid {
+          original {
             src
           }
         }
@@ -20,7 +20,8 @@ const PARTNERTS_SCREEN_QUERY = graphql`
         image {
           childImageSharp {
             fluid {
-              src
+              srcSet
+              srcSetWebp
             }
           }
         }
@@ -36,7 +37,7 @@ const MainPagePartners: React.FC = (): JSX.Element => {
       text,
       background: {
         childImageSharp: {
-          fluid: { src }
+          original: { src }
         }
       },
       partners
@@ -46,6 +47,7 @@ const MainPagePartners: React.FC = (): JSX.Element => {
     <div className="partners-screen">
       <div className="partners-container" style={{ backgroundImage: `url(${src})` }}>
         <div className="partners-container-shadow" />
+
         <h2 className="partners-container-header">{title}</h2>
         <h4 className="partners-container-subheader">С кем мы работаем</h4>
         <p className="partners-container-text" dangerouslySetInnerHTML={{ __html: text }} />

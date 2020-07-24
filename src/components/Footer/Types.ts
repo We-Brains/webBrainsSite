@@ -1,5 +1,9 @@
 import { IIDSocial } from '../CommonTypes'
 
+export interface IFooter {
+  isSingle?: boolean
+}
+
 export interface IFooterQuery {
   strapiFooterScreen: {
     copyright: string

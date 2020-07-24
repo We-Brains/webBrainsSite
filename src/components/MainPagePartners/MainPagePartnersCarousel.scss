@@ -3,18 +3,21 @@
   display: flex;
   align-items: center;
   margin: 20px 15px 0;
-  padding-top: 30px;
   overflow: hidden;
   border-top: 1px solid var(--white-color);
-  .carousel-button {
-    top: unset;
-    &-left {
-      left: 0;
-      height: auto;
-    }
-    &-right {
-      right: 0;
-      height: auto;
+
+  .carousel {
+    width: 100%;
+    &-button {
+      top: unset;
+      &-left {
+        left: 0;
+        height: auto;
+      }
+      &-right {
+        right: 0;
+        height: auto;
+      }
     }
   }
 }
@@ -22,7 +25,6 @@
 @media only screen and (min-height: 600px) {
   .partners-carousel {
     margin: 40px 15px 0;
-    padding-top: 40px;
   }
 }
 
@@ -35,8 +37,15 @@
 @media only screen and (min-width: 768px) {
   .partners-carousel {
     margin: 50px 100px 0;
-    .carousel-button {
-      display: none;
+    .carousel {
+      &-list {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(6, 1fr);
+      }
+      &-button {
+        display: none;
+      }
     }
   }
 }
@@ -44,5 +53,8 @@
 @media only screen and (min-width: 1366px) {
   .partners-carousel {
     margin: 50px 140px 0;
+    .carousel-list {
+      margin-top: 80px;
+    }
   }
 }
