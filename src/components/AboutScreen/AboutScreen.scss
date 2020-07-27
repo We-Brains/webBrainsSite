@@ -109,7 +109,7 @@
     grid-row-gap: 0;
     grid-template-columns: min-content 0.8fr 0.9fr;
     align-content: center;
-    height: 100%;
+    min-height: 100vh;
     .default-header {
       margin-top: 0;
     }
