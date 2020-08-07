@@ -24,6 +24,7 @@ export interface IOfferType {
 
 export interface IServiceContext {
   toForm: () => void
+  currentService?: number
 }
 
 export interface IOffer {

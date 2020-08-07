@@ -1,0 +1,62 @@
+.trust {
+  &-container {
+    padding: 20px 0;
+    &-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background-image: url(../../assets/images/trust-bg.png);
+      background-position: center center;
+      background-size: cover;
+      filter: brightness(0.4);
+    }
+  }
+  &-text {
+    padding: 15px;
+    color: var(--white-color);
+    font-family: var(--font-roboto);
+  }
+  &-container .yellow-btn {
+    margin: 15px;
+    background-color: var(--transparent);
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .trust {
+    &-text {
+      width: 60%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .default-container.trust {
+    &-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  .trust {
+    &-text {
+      grid-column: 1;
+      width: 80%;
+    }
+    &-container {
+      .yellow-btn {
+        grid-column: 1;
+        height: min-content;
+      }
+      .carousel {
+        grid-row: 1 / span 3;
+        grid-column: 2;
+      }
+    }
+  }
+}

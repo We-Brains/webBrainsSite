@@ -1,17 +1,13 @@
 .timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
   padding: 40px 0;
   overflow: hidden;
+
   &-subheader {
     color: var(--violet-color);
-  }
-}
-
-@media only screen and (min-height: 600px) {
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
   }
 }
 

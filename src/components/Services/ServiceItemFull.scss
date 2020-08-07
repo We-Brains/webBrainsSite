@@ -6,9 +6,18 @@
   width: auto;
   height: 100%;
   margin: 0 20px;
-  padding: 15px 25px;
+  padding: 25px;
   background-color: var(--violet-color);
   box-shadow: var(--violet-shadow);
+  &-text {
+    margin-top: 10px;
+    color: var(--white-color);
+    font-weight: var(--font-weight-400);
+    font-size: var(--font-12);
+    font-family: var(--font-roboto);
+    font-style: normal;
+    line-height: initial;
+  }
   &-svg {
     width: 50px;
     height: 50px;
@@ -19,11 +28,11 @@
   }
   &-title {
     position: relative;
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 0 0 5px;
     color: var(--white-color);
     font-weight: var(--font-weight-900);
-    font-size: var(--font-16);
+    font-size: var(--font-20);
     font-family: var(--font-oswald);
     font-style: normal;
     line-height: initial;
@@ -43,15 +52,6 @@
     font-size: var(--font-15);
     font-family: var(--font-roboto);
   }
-  &-text {
-    margin-top: 10px;
-    color: var(--white-color);
-    font-weight: var(--font-weight-400);
-    font-size: var(--font-10);
-    font-family: var(--font-roboto);
-    font-style: normal;
-    line-height: initial;
-  }
   &-buttons {
     position: absolute;
     bottom: 0;
@@ -59,6 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 15px;
     padding: inherit;
     & &-item.yellow-btn {
       display: block;
@@ -78,23 +79,6 @@
       border-bottom: 1px solid var(--white-color);
       visibility: hidden;
       cursor: pointer;
-    }
-  }
-}
-
-@media only screen and (min-height: 600px) {
-  .service-full {
-    margin: 0 40px;
-    padding: 25px;
-    &-title {
-      margin: 20px 0;
-      font-size: var(--font-20);
-    }
-    &-text {
-      font-size: var(--font-12);
-    }
-    &-buttons {
-      margin-top: 15px;
     }
   }
 }

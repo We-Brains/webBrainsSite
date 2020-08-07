@@ -5,6 +5,9 @@ require('dotenv').config();
 exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
 	return setPostBodyComponents([
 		<div key="portal" id="portal" />,
+		<script src="/__/firebase/7.17.1/firebase-app.js" />,
+		<script src="/__/firebase/7.17.1/firebase-analytics.js" />,
+		<script src="/__/firebase/init.js" />,
 		<script
 			async
 			dangerouslySetInnerHTML={{

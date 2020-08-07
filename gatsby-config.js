@@ -42,7 +42,8 @@ module.exports = {
 					'partners-screen',
 					'portfolio-screen',
 					'service-screen',
-					'timeline-screen'
+					'timeline-screen',
+					'trust-screen'
 				],
 				queryLimit: 1000,
 				loginData: {

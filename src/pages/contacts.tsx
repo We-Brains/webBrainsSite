@@ -8,15 +8,19 @@ const ContactsPage = () => {
   const [currentScreen, changeScreen] = useState<number>(0)
   useEffect(() => {
     if (typeof window !== 'undefined')
-      window.scrollTo({
-        top: currentScreen * window.innerHeight,
-        behavior: 'smooth'
-      })
+      if (currentScreen === 1) {
+        const selector = `.${window.innerWidth < 1366 ? 'form-screen' : 'screen-footer'}`
+        window.scrollTo({
+          top: document.querySelector(selector).offsetTop,
+          behavior: 'smooth'
+        })
+        changeScreen(undefined)
+      }
   }, [currentScreen])
   return (
     <>
       <Page className="screen screen-footer screen-dark-gray">
-        <Header />
+        <Header currentScreen={currentScreen} changeScreen={() => changeScreen(1)} />
         <Footer isSingle />
       </Page>
       <Page className="screen screen-violet form-screen form-page">

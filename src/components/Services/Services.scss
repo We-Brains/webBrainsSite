@@ -39,7 +39,6 @@
       flex-direction: row;
       align-items: center;
       margin: 25px 20px 20px;
-
       svg {
         height: 12px;
         margin-right: 6px;
@@ -72,8 +71,8 @@
     align-items: center;
     justify-content: space-between;
     width: auto;
-    margin: 0 20px 15px;
-    padding: 20px;
+    margin: 0 20px 30px;
+    padding: 25px;
     color: var(--white-color);
     font-weight: var(--font-weight-900);
     font-size: var(--font-16);
@@ -92,61 +91,6 @@
       background-color: var(--violet-color);
       box-shadow: var(--violet-shadow);
       transition: 0.1s;
-    }
-  }
-}
-
-@media only screen and (min-height: 600px) {
-  .service-selector {
-    &-item {
-      margin: 0 40px 30px;
-      padding: 25px;
-    }
-    &-column {
-      &-back {
-        margin: 25px 40px 20px;
-      }
-    }
-  }
-}
-@media only screen and (min-height: 700px) {
-  .service-selector {
-    &-item {
-      padding: 30px;
-      font-size: var(--font-20);
-    }
-    &-column {
-      &-back {
-        margin: 30px 40px 20px;
-      }
-      .yellow-btn {
-        margin-bottom: 20px;
-      }
-    }
-  }
-}
-
-@media only screen and (min-height: 800px) {
-  .service-selector {
-    &-item {
-      margin: 0 20px 30px;
-      padding: 30px;
-      font-size: var(--font-20);
-    }
-    &-column {
-      &-back {
-        margin: 50px 20px 30px;
-        &-text {
-          font-size: var(--font-18);
-        }
-        svg {
-          height: 15px;
-          margin-bottom: 0;
-        }
-      }
-      .yellow-btn {
-        margin-bottom: 50px;
-      }
     }
   }
 }

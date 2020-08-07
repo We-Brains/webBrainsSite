@@ -6,7 +6,7 @@ const Background: React.FC<IBackground> = ({ background }): JSX.Element => {
   return (
     <div className="bg">
       <div className="bg-filled" />
-      <div className="bg-img" style={{ backgroundImage: `url(${background.childImageSharp.fluid.src})` }} />
+      <div className="bg-img" style={{ backgroundImage: `url(${background.childImageSharp.original.src})` }} />
     </div>
   )
 }

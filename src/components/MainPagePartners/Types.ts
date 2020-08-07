@@ -13,6 +13,7 @@ export interface IMainPagePartnersCarousel {
 
 export interface IPartners {
   id: string | number
+  title?: string
   image: IImage
 }
 

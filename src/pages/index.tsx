@@ -22,22 +22,35 @@ const IndexPage: React.FC = (): JSX.Element => {
     if (typeof currentService !== 'undefined') changeScreen(1)
   }, [currentService])
   useEffect(() => {
-    if (typeof window !== 'undefined')
-      window.scrollTo({
-        top: currentScreen * window.innerHeight,
-        behavior: 'smooth'
-      })
+    if (typeof window !== 'undefined') {
+      if (currentScreen === 1) {
+        const selector = `.screen-services`
+        window.scrollTo({
+          top: document.querySelector(selector).offsetTop,
+          behavior: 'smooth'
+        })
+        changeScreen(undefined)
+      }
+      if (currentScreen === 6) {
+        const selector = `.${window.innerWidth < 1366 ? 'form-screen' : 'screen-footer'}`
+        window.scrollTo({
+          top: document.querySelector(selector).offsetTop,
+          behavior: 'smooth'
+        })
+        changeScreen(undefined)
+      }
+    }
   }, [currentScreen])
   return (
     <>
       <SEO lang="ru" date="2020-06-07" path="/" noindex={false} />
       <Page className="screen screen-dark-gray">
-        <Header />
+        <Header currentScreen={currentScreen} changeScreen={() => changeScreen(6)} />
         <FirstScreenContext.Provider value={{ changeService: number => changeService(number) }}>
           <MainPageFirstScreen toForm={() => changeScreen(6)} />
         </FirstScreenContext.Provider>
       </Page>
-      <Page className="screen screen-gray screen-auto">
+      <Page className="screen screen-gray screen-services screen-auto">
         <serviceContext.Provider value={{ toForm: () => changeScreen(6), currentService }}>
           <MainPageServiceScreen />
         </serviceContext.Provider>
@@ -54,7 +67,7 @@ const IndexPage: React.FC = (): JSX.Element => {
       <Page className="screen screen-gray screen-auto">
         <MainPageBuisness />
       </Page>
-      <Page className="screen screen-violet form-screen">
+      <Page className="screen screen-violet form-screen ">
         <Form />
       </Page>
       <Page className="screen screen-footer screen-dark-gray">

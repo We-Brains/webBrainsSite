@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin: 20px 15px 0;
+  margin: 40px 15px 0;
   overflow: hidden;
   border-top: 1px solid var(--white-color);
 
@@ -19,12 +19,6 @@
         height: auto;
       }
     }
-  }
-}
-
-@media only screen and (min-height: 600px) {
-  .partners-carousel {
-    margin: 40px 15px 0;
   }
 }
 

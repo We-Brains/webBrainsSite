@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 65% min-content;
   justify-content: space-between;
-  margin-top: 0px;
+  margin-top: 20px;
   padding: 0 0 0 20px;
   &-title {
     position: relative;
@@ -11,7 +11,7 @@
     padding-top: 15px;
     color: var(--white-color);
     font-weight: var(--font-weight-800);
-    font-size: var(--font-34);
+    font-size: var(--font-40);
     font-family: var(--font-oswald);
     font-style: normal;
     line-height: 34px;
@@ -63,36 +63,6 @@
   }
 }
 
-@media only screen and (min-height: 600px) {
-  .main-page-content {
-    margin-top: 20px;
-    &-title {
-      font-size: var(--font-40);
-      line-height: 40px;
-    }
-  }
-}
-
-@media only screen and (min-height: 700px) {
-  .main-page-content {
-    margin-top: 40px;
-  }
-}
-@media only screen and (min-height: 730px) {
-  .main-page-content-button {
-    margin-top: 40px;
-  }
-}
-
-@media only screen and (min-height: 760px) {
-  .main-page-content {
-    margin-top: 50px;
-  }
-  .main-page-content-button {
-    margin-top: 50px;
-  }
-}
-
 @media only screen and (min-width: 760px) and (min-height: 760px) and (orientation: portrait) {
   .main-page-content {
     margin-top: 150px;
@@ -105,8 +75,8 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    height: 100%;
-    padding: 80px 0 20px;
+    min-height: 100vh;
+    padding: 80px 0 100px;
     &-content {
       grid-template-columns: 50% min-content;
       width: 100%;
@@ -117,6 +87,7 @@
       }
       &-button {
         width: 260px;
+        margin-top: 40px;
         padding: 15px 30px;
         font-size: var(--font-25);
       }
@@ -143,14 +114,6 @@
   }
 }
 
-@media only screen and (min-height: 800px) {
-  .main-page-content {
-    &-button {
-      margin-top: 40px;
-    }
-  }
-}
-
 @media only screen and (min-height: 800px) and (orientation: landscape) {
   .main-page-content {
     &-title {
@@ -166,14 +129,6 @@
       width: 45px;
       height: 45px;
       padding: 10px;
-    }
-  }
-}
-
-@media only screen and (min-height: 800px) and (orientation: landscape) {
-  .main-page-content {
-    &-button {
-      margin-top: 80px;
     }
   }
 }

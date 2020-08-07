@@ -1,7 +1,12 @@
 .main-page-buissness {
   position: relative;
   z-index: 10;
-  padding: 40px 0;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-columns: 100%;
+  align-content: center;
+  height: 100%;
+  padding: 60px 0;
   .default-header::before {
     background-color: var(--violet-color);
   }
@@ -14,7 +19,7 @@
     height: 100%;
   }
   &-text {
-    margin: 10px 0 15px;
+    margin: 60px 0;
     padding: 0 15px;
     color: var(--white-color);
     font-weight: var(--font-weight-400);
@@ -45,23 +50,6 @@
   }
 }
 
-@media only screen and (min-height: 600px) {
-  .main-page-buissness {
-    padding: 60px 0;
-    &-text {
-      margin: 60px 0;
-    }
-  }
-}
-@media only screen and (min-height: 700px) {
-  .main-page-buissness {
-    display: grid;
-    grid-template-rows: repeat(3, min-content);
-    grid-template-columns: 100%;
-    align-content: center;
-    height: 100%;
-  }
-}
 @media only screen and (min-width: 768px) {
   .main-page-buissness {
     display: grid;

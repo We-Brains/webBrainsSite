@@ -1,5 +1,9 @@
 .carousel {
-  margin-top: 20px;
+  margin-top: 50px;
+  .service-item {
+    height: 273px;
+    padding: 15px 25px;
+  }
   &-buttons {
     position: absolute;
     top: 0;
@@ -20,18 +24,6 @@
   height: 40px;
   margin: 0 auto;
   background-color: var(--violet-color);
-}
-
-@media only screen and (min-height: 650px) {
-  .main-page {
-    .carousel {
-      margin-top: 50px;
-      .service-item {
-        height: 273px;
-        padding: 15px 25px;
-      }
-    }
-  }
 }
 
 @media only screen and (min-height: 760px) {

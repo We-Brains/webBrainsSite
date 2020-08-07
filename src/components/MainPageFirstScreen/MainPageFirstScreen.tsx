@@ -13,7 +13,7 @@ const FIRST_SCREEN_QUERY = graphql`
       btnText
       background {
         childImageSharp {
-          fluid {
+          original {
             src
           }
         }
