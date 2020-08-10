@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import Socials from '../DefaultComponents/Socials'
-import ArrowIcon from '../../assets/images/arrow.long.inline.svg'
 // Style
 import './PortfolioScreen.scss'
 import { IPortfolioScreenQuery } from './Types'
+import PortfolioScreenCase from './PortfolioScreenCase'
 
 const PORTFOLIO_QUERY = graphql`
   query MyQuery {
@@ -20,6 +20,7 @@ const PORTFOLIO_QUERY = graphql`
         portfolios {
           id
           title
+          type
           link
           image {
             childImageSharp {
@@ -63,29 +64,8 @@ const PortfolioScreen: React.FC = (): JSX.Element => {
       </div>
 
       <div className="portfolio-cases">
-        {nodes[activeCategory].portfolios.map(({ id, title: portTitle, link, image }) => {
-          const {
-            childImageSharp: {
-              fluid: { src }
-            }
-          } = image
-          const style = {
-            backgroundImage: `url(${src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'grayscale(100%)'
-          }
-          return (
-            <div key={id} className="portfolio-case">
-              <p className="portfolio-filter">{nodes[activeCategory].name}</p>
-              <h3 className="portfolio-name">{portTitle}</h3>
-              <a href={link} target="_blank" rel="noreferrer" className="portfolio-link">
-                смотреть кейс
-                <ArrowIcon />
-              </a>
-              <div className="portfolio-preview" style={style} />
-            </div>
-          )
+        {nodes[activeCategory].portfolios.map(({ id, title: portTitle, type, link, image }) => {
+          return <PortfolioScreenCase key={id} title={portTitle} type={type} link={link} image={image} />
         })}
       </div>
       <Socials />

@@ -17,7 +17,7 @@ export interface IPortNodes {
 }
 
 export interface IPortfoliosType {
-  id: string | number
+  id?: string | number
   title: string
   type: string
   link?: string
