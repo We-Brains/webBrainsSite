@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import Socials from '../DefaultComponents/Socials'
+import ArrowIcon from '../../assets/images/arrow.long.inline.svg'
 // Style
 import './PortfolioScreen.scss'
 import { IPortfolioScreenQuery } from './Types'
@@ -19,7 +20,6 @@ const PORTFOLIO_QUERY = graphql`
         portfolios {
           id
           title
-          type
           link
           image {
             childImageSharp {
@@ -63,19 +63,25 @@ const PortfolioScreen: React.FC = (): JSX.Element => {
       </div>
 
       <div className="portfolio-cases">
-        {nodes[activeCategory].portfolios.map(({ id, title: portTitle, link, type, image }) => {
+        {nodes[activeCategory].portfolios.map(({ id, title: portTitle, link, image }) => {
           const {
             childImageSharp: {
               fluid: { src }
             }
           } = image
-          const style = { backgroundImage: `url(${src})`, backgroundSize: 'cover' }
+          const style = {
+            backgroundImage: `url(${src})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'grayscale(100%)'
+          }
           return (
-            <div key={id} className="portfolio-case-title">
-              <p className="portfolio-filter">{type}</p>
+            <div key={id} className="portfolio-case">
+              <p className="portfolio-filter">{nodes[activeCategory].name}</p>
               <h3 className="portfolio-name">{portTitle}</h3>
               <a href={link} target="_blank" rel="noreferrer" className="portfolio-link">
                 смотреть кейс
+                <ArrowIcon />
               </a>
               <div className="portfolio-preview" style={style} />
             </div>
