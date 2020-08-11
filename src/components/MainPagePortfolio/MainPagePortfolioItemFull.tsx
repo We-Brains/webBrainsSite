@@ -8,7 +8,7 @@ const MainPagePortfolioItemFull: React.FC<IMainPagePortfolioItemFull> = ({ chang
     <div className="portfolio-case">
       <div
         className="portfolio-case-close-block"
-        onClick={e => {
+        onClick={() => {
           changeShowCase(false)
         }}
       />
