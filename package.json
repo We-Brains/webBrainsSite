@@ -22,7 +22,6 @@
 		"node": ">=8.0.0"
 	},
 	"dependencies": {
-		"@mmesyats/page-view": "git+https://github.com/MMesyats/page-view.git",
 		"classnames": "^2.2.6",
 		"dotenv": "^8.2.0",
 		"firebase": "^7.16.1",
