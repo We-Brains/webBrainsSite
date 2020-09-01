@@ -9,7 +9,7 @@ const MainPagePortfolioCarouselItem: React.FC<IPortfolioSingle> = React.memo(
     className = '',
     title,
     type,
-    // link,
+    link,
     caseImage,
     image: {
       childImageSharp: {
@@ -44,7 +44,7 @@ const MainPagePortfolioCarouselItem: React.FC<IPortfolioSingle> = React.memo(
             ПОСМОТРЕТЬ
           </button>
         </div>
-        {showCase && <MainPagePortfolioItemFull changeShowCase={changeShowCase} caseImage={caseImage} />}
+        {showCase && <MainPagePortfolioItemFull link={link} changeShowCase={changeShowCase} caseImage={caseImage} />}
       </>
     )
   }
