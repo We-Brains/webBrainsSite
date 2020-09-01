@@ -47,9 +47,7 @@ const MainPagePortfolio: React.FC = (): JSX.Element => {
           <h3 className="default-header-sub">{subtitle}</h3>
         </div>
       </div>
-      <div className="yellow-btn">
-        <Link to="/portfolio/">{btnText}</Link>
-      </div>
+        <Link className="yellow-btn" to="/portfolio/">{btnText}</Link>
       <MainPagePortfolioCarousel portfolios={portfolios} />
     </div>
   )

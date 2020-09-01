@@ -24,9 +24,7 @@ const MainPageServiceScreen: React.FC = (): JSX.Element => {
         <h3 className="main-page-service-header-sub">{subtitle}</h3>
       </div>
       <Services />
-      <div className="main-page-service-container-btn yellow-btn">
-        <Link to="/portfolio/">ВСЕ РАБОТЫ</Link>
-      </div>
+        <Link className="main-page-service-container-btn yellow-btn" to="/portfolio/">ВСЕ РАБОТЫ</Link>
     </div>
   )
 }
