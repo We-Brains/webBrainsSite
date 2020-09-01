@@ -68,7 +68,7 @@
     display: grid;
     grid-row-gap: 50px;
     grid-template-columns: auto min-content;
-    padding: 125px 30px 60px;
+    padding: 90px 30px 60px;
     .default-header {
       margin-top: 40px;
       &-sub {
@@ -115,7 +115,7 @@
   }
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 1280px) {
   .about {
     grid-row-gap: 0;
     grid-template-columns: min-content 0.8fr 0.9fr;
@@ -131,7 +131,7 @@
       &-stick {
         grid-row: 3;
         align-self: center;
-        height: 90%;
+        height: 30vh;
         margin: 0 auto;
       }
     }

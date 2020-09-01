@@ -42,7 +42,7 @@
     }
   }
 }
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 1280px) {
   .service-screen {
     grid-column-gap: 70px;
     grid-template-columns: min-content auto;
@@ -54,7 +54,7 @@
     .default-socials-stick {
       grid-row: 3;
       grid-column: 1;
-      height: 75%;
+      height: 30vh;
     }
     .service-selector-container {
       grid-column: 2;

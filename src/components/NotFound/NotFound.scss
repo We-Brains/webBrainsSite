@@ -100,7 +100,7 @@
   }
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 1280px) {
   .not-found {
     &-content {
       display: grid;
@@ -120,7 +120,7 @@
       grid-column: 1;
       &-stick {
         grid-row: 2 / span 2;
-        height: 80%;
+        height: 30vh;
         margin: 60px auto 0;
         background-color: var(--dark-gray-1d-color);
       }
