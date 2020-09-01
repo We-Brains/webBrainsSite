@@ -1,6 +1,6 @@
 import React from 'react'
 import './MainPageServiceScreen.scss'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import Services from '../Services/Services'
 import { IMainPageServices } from './Types'
 
@@ -24,7 +24,7 @@ const MainPageServiceScreen: React.FC = (): JSX.Element => {
         <h3 className="main-page-service-header-sub">{subtitle}</h3>
       </div>
       <Services />
-      <div className="main-page-service-container-btn yellow-btn">ВСЕ РАБОТЫ</div>
+        <Link className="main-page-service-container-btn yellow-btn" to="/portfolio/">ВСЕ РАБОТЫ</Link>
     </div>
   )
 }

@@ -7,7 +7,7 @@ import './MainPagePortfolioCarousel.scss'
 
 const MainPagePortfolioCarousel: React.FC<IPortfolioCarousel> = React.memo(
   ({ portfolios }): JSX.Element => {
-    const [active, chageActive] = useState(2)
+    const [active, changeActive] = useState(2)
     return (
       <>
         <div className="carousel-container">
@@ -26,7 +26,7 @@ const MainPagePortfolioCarousel: React.FC<IPortfolioCarousel> = React.memo(
                 link={link}
                 caseImage={caseImage}
                 className={`${active === idx ? 'main-page-portfolio-carousel-item-active' : ''}`}
-                onHover={() => chageActive(idx)}
+                onHover={() => changeActive(idx)}
               />
             ))}
           </Carousel>
