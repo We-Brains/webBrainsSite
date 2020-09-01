@@ -1,6 +1,6 @@
 import React from 'react'
 import './MainPagePortfolio.scss'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import MainPagePortfolioCarousel from './MainPagePortfolioCarousel'
 import { IPortfolioScreenQuery } from './Types'
 
@@ -47,7 +47,9 @@ const MainPagePortfolio: React.FC = (): JSX.Element => {
           <h3 className="default-header-sub">{subtitle}</h3>
         </div>
       </div>
-      <div className="yellow-btn">{btnText}</div>
+      <div className="yellow-btn">
+        <Link to="/portfolio/">{btnText}</Link>
+      </div>
       <MainPagePortfolioCarousel portfolios={portfolios} />
     </div>
   )
