@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import BackIcon from '../../assets/images/arrow.long.yellow.inline.svg'
 import ServiceItem from './ServiceItem'
 import ServiceItemFull from './ServiceItemFull'
@@ -46,7 +46,7 @@ const Services: React.FC<IServices> = ({ isMain = true }): JSX.Element => {
     <div className={`service-selector-container service-selector-column-${currentScreen}`}>
       <div className="service-selector-column">
         {isMain ? (
-          <Link to="/portfolio/" className="yellow-btn">Все работы</Link>
+          <div className="yellow-btn">Все работы</div>
         ) : (
           <h4 className="service-selector-column-header">Что мы можем Вам предложить?</h4>
         )}

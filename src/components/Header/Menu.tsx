@@ -9,7 +9,6 @@ const LINKS = [
   { title: 'Главная', ref: '/' },
   { title: 'О нас', ref: '/about/' },
   { title: 'Услуги', ref: '/services/' },
-  { title: 'Портфолио', ref: '/portfolio' },
   { title: 'Контакты', ref: '/contacts/' }
 ]
 

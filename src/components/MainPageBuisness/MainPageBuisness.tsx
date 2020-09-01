@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import MainPageBuisnessCarousel from './MainPageBuisnessCarousel'
 import { IMainPageBuisness } from './Types'
 
-const BUSINESS_SCREEN_QUERY = graphql`
+const BUISNESS_SCREEN_QUERY = graphql`
   query buissnessQuery {
     strapiBuisnessScreen {
       title
@@ -38,7 +38,7 @@ const MainPageBuisness: React.FC = (): JSX.Element => {
         }
       }
     }
-  }: IMainPageBuisness = useStaticQuery(BUSINESS_SCREEN_QUERY)
+  }: IMainPageBuisness = useStaticQuery(BUISNESS_SCREEN_QUERY)
   return (
     <div className="main-page-buissness-container">
       <div className="main-page-buissness-bg" style={{ backgroundImage: `url(${src})` }} />
