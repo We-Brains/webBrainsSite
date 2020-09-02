@@ -45,6 +45,7 @@ export interface IImage {
 }
 
 export interface IMainPagePortfolioItemFull {
+  link?: string
   changeShowCase: (arg0: boolean) => void
   caseImage: IImage
 }

@@ -41,6 +41,17 @@
       height: 100%;
     }
   }
+  &-goto {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    z-index: 10;
+    color: var(--white-color);
+    font-size: var(--font-25);
+    background-color: var(--transparent);
+    border: none;
+    cursor: pointer;
+  }
   &-image {
     display: block;
     width: 100%;
@@ -57,6 +68,11 @@
     padding: 20px 100px;
     &-close {
       top: 20px;
+      right: 40px;
+      font-size: var(--font-40);
+    }
+    &-goto {
+      top: 80px;
       right: 40px;
       font-size: var(--font-40);
     }

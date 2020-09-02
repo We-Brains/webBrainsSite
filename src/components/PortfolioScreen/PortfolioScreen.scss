@@ -30,7 +30,7 @@
     width: 100%;
     margin-top: 50px;
   }
-  &-case {
+  &-screen-case {
     width: 100%;
     margin-top: 50px;
   }
@@ -123,7 +123,7 @@
       grid-template-columns: 1fr 1fr;
       margin-top: 0;
     }
-    &-case {
+    &-screen-case {
       position: relative;
       margin-top: 0;
     }
@@ -143,6 +143,7 @@
       bottom: 15px;
       left: 15px;
       font-size: var(--font-24);
+      text-transform: capitalize;
     }
     &-link {
       right: 15px;
