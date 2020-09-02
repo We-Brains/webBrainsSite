@@ -12,7 +12,7 @@ const PortfolioScreenCase: React.FC<IPortfoliosType> = React.memo(
     } = image
 
     return (
-      <div className="portfolio-case">
+      <div className="portfolio-screen-case">
         <p className="portfolio-filter">{type}</p>
         <h3 className="portfolio-name">{title}</h3>
         <a href={link} target="_blank" rel="noreferrer" className="portfolio-link">
