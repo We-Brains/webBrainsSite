@@ -28,7 +28,7 @@ const Menu: React.FC<IMenu> = ({ isOpen, changeScreen }): JSX.Element => {
         <span className="menu-contact-btn-text">СВЯЗАТЬСЯ С НАМИ</span>
       </button>
       <div className="menu-socials-container">
-        <h5 className="menu-socials-title">ПОДПИСЫВАЙТЕСЬ НА НАС</h5>
+        <h5 className="menu-socials-title">СВЯЗЬ В МЕССЕНДЖЕРАХ</h5>
         <Socials className="menu-socials" />
       </div>
     </div>

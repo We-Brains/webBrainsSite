@@ -69,7 +69,7 @@ const Form = () => {
 
   return (
     <form className="form-fields">
-      <div className="form-fields-text">Мы создадим качественный ресурс на заказ, который достойно будет представлять вашу фирму. </div>
+      <div className="form-fields-text">Качественный ресурс на заказ, который достойно будет представлять вашу фирму. </div>
       <div className="form-fields-wrapper form-fields-input-name">
         <input
           className={`form-fields-input ${errFields.includes(name) && 'form-fields-input-error'}`}

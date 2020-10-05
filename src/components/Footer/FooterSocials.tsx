@@ -4,7 +4,7 @@ import { IFooterSocials } from './Types'
 const FooterSocials: React.FC<IFooterSocials> = ({ socials }): JSX.Element => {
   return (
     <div className="footer-socials">
-      <h3 className="footer-header">ПОДПИСЫВАЙТЕСЬ НА НАС</h3>
+      <h3 className="footer-header">СВЯЗЬ В МЕССЕНДЖЕРАХ</h3>
       <ul className="footer-socials-list">
         {socials.map(({ id, title, href, svg }) => (
           <li key={id} className="footer-socials-list-item">
