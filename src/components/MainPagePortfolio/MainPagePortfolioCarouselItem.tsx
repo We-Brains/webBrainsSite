@@ -8,15 +8,12 @@ const MainPagePortfolioCarouselItem: React.FC<IPortfolioSingle> = React.memo(
     onHover,
     className = '',
     title,
-    type,
     link,
-    caseImage,
-    image: {
-      childImageSharp: {
-        original: { src }
-      }
-    }
+    bg,
+    logo
+    // caseImage,
   }): JSX.Element => {
+    const logoSrc = logo && logo.childImageSharp.original.src
     const [showCase, changeShowCase] = useState(false)
     React.useEffect(() => {
       if (showCase) {
@@ -26,6 +23,7 @@ const MainPagePortfolioCarouselItem: React.FC<IPortfolioSingle> = React.memo(
       }
       // showCase ? document.body.classList.add('fixed') : document.body.classList.remove('fixed')
     }, [showCase])
+
     return (
       <>
         <div
@@ -34,17 +32,16 @@ const MainPagePortfolioCarouselItem: React.FC<IPortfolioSingle> = React.memo(
             onHover()
           }}
           style={{
-            backgroundImage: `url(${src})`
+            background: bg
           }}
         >
-          <div className="main-page-portfolio-carousel-item-shadow" />
+          <img className="main-page-portfolio-carousel-item-logo" src={logoSrc} alt="" />
           <h4 className="main-page-portfolio-carousel-item-header">{title}</h4>
-          <h5 className="main-page-portfolio-carousel-item-type">{type}</h5>
           <button type="button" onClick={() => changeShowCase(true)} className="yellow-btn">
             ПОСМОТРЕТЬ
           </button>
         </div>
-        {showCase && <MainPagePortfolioItemFull link={link} changeShowCase={changeShowCase} caseImage={caseImage} />}
+        {showCase && <MainPagePortfolioItemFull link={link} changeShowCase={changeShowCase} caseImage="img" />}
       </>
     )
   }

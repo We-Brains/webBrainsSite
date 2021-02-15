@@ -36,16 +36,17 @@ const PORTFOLIO_QUERY = graphql`
 `
 
 const PortfolioScreen: React.FC = (): JSX.Element => {
-  const {
-    strapiPortfolioPageScreen: { title, subtitle },
-    allStrapiPortfolioTypes: { nodes }
-  }: IPortfolioScreenQuery = useStaticQuery(PORTFOLIO_QUERY)
+  // const {
+  //   strapiPortfolioPageScreen: { title, subtitle },
+  //   allStrapiPortfolioTypes: { nodes }
+  // }: IPortfolioScreenQuery = useStaticQuery(PORTFOLIO_QUERY)
 
   const [activeCategory, setActiveCategory] = useState(0)
 
   return (
     <div className="portfolio">
-      <div className="portfolio-headers">
+      <h1>Hello</h1>
+      {/* <div className="portfolio-headers">
         <h2 className="default-header">{title}</h2>
         <h4 className="default-header-sub">{subtitle}</h4>
       </div>
@@ -66,8 +67,8 @@ const PortfolioScreen: React.FC = (): JSX.Element => {
       <div className="portfolio-cases">
         {nodes[activeCategory].portfolios.map(({ id, title: portTitle, type, link, image }) => {
           return <PortfolioScreenCase key={id} title={portTitle} type={type} link={link} image={image} />
-        })}
-      </div>
+        })} */}
+      {/* </div> */}
       <Socials />
       <div className="default-socials-stick" />
     </div>

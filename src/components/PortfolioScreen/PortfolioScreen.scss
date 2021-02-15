@@ -1,10 +1,6 @@
 .portfolio {
   font-family: var(--font-oswald);
   .default-header {
-    &,
-    &-sub {
-      padding-left: 8px;
-    }
     &-sub {
       font-size: var(--font-14);
     }
@@ -83,6 +79,13 @@
 
   .default-socials {
     display: none;
+  }
+  &-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 15px;
   }
 }
 

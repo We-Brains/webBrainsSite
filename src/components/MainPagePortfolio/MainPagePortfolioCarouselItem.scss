@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 250px;
+  height: 265px;
   margin: 0 40px;
   padding: 25px 35px;
   background-position: center center;
@@ -23,9 +23,13 @@
       object-fit: cover;
     }
   }
+  &-logo {
+    height: 107px;
+  }
   &-header {
     position: relative;
     z-index: 1;
+    margin-top: 10px;
     font-weight: var(--font-weight-900);
     font-size: var(--font-20);
     font-family: var(--font-oswald);
@@ -51,8 +55,11 @@
     bottom: 30px;
     z-index: 1;
     width: auto;
+    height: 40px;
     margin: 0 auto;
+    padding: 5px 30px;
     background-color: var(--transparent);
+    border: 2px solid var(--white-color);
     visibility: visible;
     transition: ease-in-out opacity 0.5s;
   }

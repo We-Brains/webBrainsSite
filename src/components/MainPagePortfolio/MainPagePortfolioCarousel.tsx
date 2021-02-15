@@ -17,18 +17,21 @@ const MainPagePortfolioCarousel: React.FC<IPortfolioCarousel> = React.memo(
             buttonPrev={<Arrow className="carousel-button-left" />}
             buttonNext={<Arrow className="carousel-button-right" />}
           >
-            {portfolios.map(({ id, title, type, image, caseImage, link }, idx) => (
-              <MainPagePortfolioCarouselItem
-                key={id}
-                title={title}
-                type={type}
-                image={image}
-                link={link}
-                caseImage={caseImage}
-                className={`${active === idx ? 'main-page-portfolio-carousel-item-active' : ''}`}
-                onHover={() => changeActive(idx)}
-              />
-            ))}
+            {portfolios
+              .filter((item) => item.logo !== null)
+              .map(({ id, title, logo, link, mainPageBg }, idx) => (
+                <MainPagePortfolioCarouselItem
+                  key={id}
+                  title={title}
+                  // image={image}
+                  logo={logo}
+                  link={link}
+                  bg={mainPageBg}
+                  // caseImage={caseImage}
+                  className={`${active === idx ? 'main-page-portfolio-carousel-item-active' : ''}`}
+                  onHover={() => changeActive(idx)}
+                />
+              ))}
           </Carousel>
         </div>
       </>

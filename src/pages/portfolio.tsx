@@ -6,6 +6,7 @@ import PortfolioScreen from '../components/PortfolioScreen/PortfolioScreen'
 import FormScreen from '../components/Form/FormScreen'
 import Page from '../components/PageView/Page'
 import CallBtn from '../components/CallBtn/CallBtn'
+import PortfolioComponent from '../components/PortfolioScreen/PortfolioComponent'
 
 const PortfolioPage: React.FC = (): JSX.Element => {
   const [currentScreen, setCurrentScreen] = React.useState<number>()
@@ -26,7 +27,8 @@ const PortfolioPage: React.FC = (): JSX.Element => {
     <>
       <SEO lang="ru" date="2020-07-08" path="/" noindex={false} />
       <Header />
-      <PortfolioScreen />
+      {/* <PortfolioScreen /> */}
+      <PortfolioComponent />
       <Page className="screen screen-violet form-screen form-page">
         <FormScreen />
       </Page>
