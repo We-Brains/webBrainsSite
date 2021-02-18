@@ -24,7 +24,9 @@ export interface IPortfolioSingle {
   className?: string
   title: string
   type: string
+  bg?: string
   link?: string
+  logo?: IImage
   image: IImage
   caseImage: IImage
   onHover: () => void

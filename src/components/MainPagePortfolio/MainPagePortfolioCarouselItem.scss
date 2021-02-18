@@ -77,13 +77,79 @@
 @media only screen and (min-width: 768px) {
   .main-page-portfolio-carousel-item {
     z-index: 10;
+    justify-content: center;
     width: 100%;
-    height: 400px;
+    height: 350px;
     margin: 0 auto;
-    padding: 30px 0;
+    padding: 0;
     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.94);
+    perspective: 1000px;
     cursor: pointer;
     transition: ease-in-out height 0.4s;
+    &-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+
+    &:hover &-inner {
+      transform: rotateY(180deg);
+    }
+    &-front,
+    &-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    &-front {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &-back {
+      transform: rotateY(180deg);
+      & .item-back-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+      &-link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: var(--shadow-color);
+        & .circle-arrow {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          background-color: var(--black-color);
+          border-radius: 50%;
+        }
+        & svg {
+          width: 50px;
+          height: 20px;
+        }
+      }
+    }
     &-header {
       font-size: var(--font-25);
     }
@@ -96,31 +162,20 @@
       background: rgba(29, 26, 29, 0.35);
     }
     .yellow-btn {
-      opacity: 0;
-    }
-    &-active {
-      z-index: 20;
-      height: 450px;
-      box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.94);
-      .yellow-btn {
-        opacity: 1;
-      }
+      display: none;
     }
   }
 }
 
 @media only screen and (min-width: 1366px) {
   .main-page-portfolio-carousel-item {
-    height: 500px;
+    height: 360px;
     &-header {
       font-size: var(--font-30);
     }
     &-type {
       margin-top: 10px;
       font-size: var(--font-20);
-    }
-    &-active {
-      height: 550px;
     }
   }
 }

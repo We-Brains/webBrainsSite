@@ -29,6 +29,13 @@ const PORTFOLIO_QUERY = graphql`
           title
           secondColor
           link
+          caseImage {
+            childImageSharp {
+              original {
+                src
+              }
+            }
+          }
         }
       }
     }

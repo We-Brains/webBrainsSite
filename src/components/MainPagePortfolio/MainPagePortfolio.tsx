@@ -11,11 +11,25 @@ const PORTFOLIO_SCREEN_QUERY = graphql`
       subtitle
       btnText
       portfolios {
-        link
-        id
         title
         mainPageBg
         logo {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
+        id
+        link
+        image {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
+        caseImage {
           childImageSharp {
             original {
               src
@@ -31,7 +45,6 @@ const MainPagePortfolio: React.FC = (): JSX.Element => {
   const {
     strapiPortfolioScreen: { title, subtitle, btnText, portfolios }
   }: IPortfolioScreenQuery = useStaticQuery(PORTFOLIO_SCREEN_QUERY)
-  console.log(portfolios)
 
   return (
     <div className="main-page-portfolio-container">

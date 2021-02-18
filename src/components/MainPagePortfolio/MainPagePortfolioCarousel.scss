@@ -10,7 +10,6 @@
   .main-page-portfolio-container {
     .carousel {
       position: relative;
-      width: 100vw;
       overflow: visible;
       &-button,
       &-dots {
@@ -18,10 +17,11 @@
       }
       &-list {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px 30px;
         align-items: center;
         width: 100%;
-        min-height: 450px;
         transform: none !important;
         &-item:first-of-type,
         &-item:last-of-type {
