@@ -298,9 +298,11 @@ h3 {
 }
 
 @media only screen and (min-width: 1366px) {
-  .carousel-container {
-    width: 1100px;
-    margin: auto;
+  .main-page-portfolio-container {
+    & .carousel-container {
+      width: 1100px;
+      margin: auto;
+  }
   }
   .default {
     &-container {
