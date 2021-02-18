@@ -21,8 +21,8 @@ const MainPagePortfolioItemFull: React.FC<IMainPagePortfolioItemFull> = ({ chang
       >
         x
       </button>
-      <button type='button' className="portfolio-case-goto">
-        <a href={link} target='_blank' rel="noreferrer">
+      <button type="button" className="portfolio-case-goto">
+        <a href={link} target="_blank" rel="noreferrer">
           &#8594;
         </a>
       </button>

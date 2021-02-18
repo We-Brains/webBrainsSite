@@ -13,6 +13,7 @@
   --saturated-violet-color: #491aad;
   --timeline-color: rgba(255, 255, 255, 0.4);
   --white-transparent-color: rgba(255, 255, 255, 0.6);
+  --white-transparent-color-15: rgba(255, 255, 255, 0.15);
   --shadow-color: rgba(29, 26, 29, 0.6);
   --call-btn-1: rgba(128, 91, 233, 1);
   --call-btn-2: rgba(128, 91, 233, 0.65);
@@ -297,6 +298,10 @@ h3 {
 }
 
 @media only screen and (min-width: 1366px) {
+  .carousel-container {
+    width: 1100px;
+    margin: auto;
+  }
   .default {
     &-container {
       width: 1110px;

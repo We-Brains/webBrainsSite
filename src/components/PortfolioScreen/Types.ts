@@ -5,21 +5,21 @@ export interface IPortfolioScreenQuery {
     title: string
     subtitle: string
   }
-  allStrapiPortfolioTypes: {
-    nodes: IPortNodes[]
+  allStrapiPortfolios: {
+    edges: IPortNodes[]
   }
 }
 
 export interface IPortNodes {
-  name: string
-  id: string | number
-  portfolios: IPortfoliosType[]
+  node: IPortfoliosType
 }
 
 export interface IPortfoliosType {
   id?: string | number
   title: string
-  type: string
+  content: string
+  firstColor?: string
+  secondColor?: string
   link?: string
   image: IImage
   caseImage?: IImage
