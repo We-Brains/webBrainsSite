@@ -5,7 +5,7 @@ import MainPagePortfolioItemFull from './MainPagePortfolioItemFull'
 import ArrowSVG from '../../assets/images/arrow.long.inline.svg'
 
 const MainPagePortfolioCarouselItem: React.FC<IPortfolioSingle> = React.memo(
-  ({ title, link, bg, logo, caseImage, image }): JSX.Element => {
+  ({ title, link, bg, logo, logoSvg, caseImage, image }): JSX.Element => {
     const [showCase, changeShowCase] = useState(false)
     const logoSrc = logo && logo.childImageSharp.original.src
     const imageSrc = image.childImageSharp.fluid.src
@@ -28,8 +28,9 @@ const MainPagePortfolioCarouselItem: React.FC<IPortfolioSingle> = React.memo(
         >
           <div className="main-page-portfolio-carousel-item-inner">
             <div className="main-page-portfolio-carousel-item-front">
-              <img className="main-page-portfolio-carousel-item-logo" src={logoSrc} alt="" />
-              <h4 className="main-page-portfolio-carousel-item-header">{title}</h4>
+              {/* <img className="main-page-portfolio-carousel-item-logo" src={logoSrc} alt="" />
+              <h4 className="main-page-portfolio-carousel-item-header">{title}</h4> */}
+              <div className="main-page-portfolio-carousel-item-logo" dangerouslySetInnerHTML={{ __html: logoSvg }} />
               <button type="button" onClick={() => changeShowCase(true)} className="yellow-btn">
                 ПОСМОТРЕТЬ
               </button>

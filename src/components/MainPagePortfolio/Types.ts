@@ -8,9 +8,13 @@ export interface IPortfolioScreenQuery {
 }
 export interface IPortfolio {
   id: string
+  className?: string
   title: string
-  type: string
+  type?: string
+  bg?: string
   link?: string
+  logo?: IImage
+  logoSvg?: string
   image: IImage
   caseImage: IImage
   onHover: () => void
@@ -23,10 +27,11 @@ export interface IPortfolioCarousel {
 export interface IPortfolioSingle {
   className?: string
   title: string
-  type: string
+  type?: string
   bg?: string
   link?: string
   logo?: IImage
+  logoSvg?: string
   image: IImage
   caseImage: IImage
   onHover: () => void

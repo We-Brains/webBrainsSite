@@ -229,6 +229,11 @@ h3 {
 }
 
 @media only screen and (min-width: 768px) {
+  .main-page-portfolio-container {
+    & .carousel-container {
+      padding: 0 30px;
+    }
+  }
   .default {
     &-container {
       display: flex;
@@ -302,7 +307,7 @@ h3 {
     & .carousel-container {
       width: 1100px;
       margin: auto;
-  }
+    }
   }
   .default {
     &-container {

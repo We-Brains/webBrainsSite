@@ -13,7 +13,7 @@ const PORTFOLIO_QUERY = graphql`
       title
       subtitle
     }
-    allStrapiPortfolios {
+    allStrapiPortfolios(sort: { fields: strapiId }) {
       edges {
         node {
           id
@@ -31,8 +31,8 @@ const PORTFOLIO_QUERY = graphql`
           link
           caseImage {
             childImageSharp {
-              original {
-                src
+              fluid {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -47,8 +47,6 @@ const PortfolioComponent = () => {
     strapiPortfolioPageScreen: { title, subtitle },
     allStrapiPortfolios: { edges }
   }: IPortfolioScreenQuery = useStaticQuery(PORTFOLIO_QUERY)
-
-  console.log(edges)
 
   return (
     <div className="portfolio">

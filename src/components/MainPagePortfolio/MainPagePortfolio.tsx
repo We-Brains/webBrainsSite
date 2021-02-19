@@ -12,6 +12,7 @@ const PORTFOLIO_SCREEN_QUERY = graphql`
       btnText
       portfolios {
         title
+        logoSvg
         mainPageBg
         logo {
           childImageSharp {
@@ -31,8 +32,8 @@ const PORTFOLIO_SCREEN_QUERY = graphql`
         }
         caseImage {
           childImageSharp {
-            original {
-              src
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }

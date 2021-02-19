@@ -19,7 +19,7 @@ const MainPagePortfolioCarousel: React.FC<IPortfolioCarousel> = React.memo(
           >
             {portfolios
               .filter((item) => item.logo !== null)
-              .map(({ id, title, logo, link, mainPageBg, image, caseImage }, idx) => (
+              .map(({ id, title, logo, link, mainPageBg, logoSvg, image, caseImage }, idx) => (
                 <MainPagePortfolioCarouselItem
                   key={id}
                   title={title}
@@ -27,6 +27,7 @@ const MainPagePortfolioCarousel: React.FC<IPortfolioCarousel> = React.memo(
                   logo={logo}
                   link={link}
                   bg={mainPageBg}
+                  logoSvg={logoSvg}
                   caseImage={caseImage}
                   className={`${active === idx ? 'main-page-portfolio-carousel-item-active' : ''}`}
                   onHover={() => changeActive(idx)}

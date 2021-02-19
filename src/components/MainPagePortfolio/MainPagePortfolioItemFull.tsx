@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Image from 'gatsby-image'
 import './MainPagePortfolioItemFull.scss'
 import { IMainPagePortfolioItemFull } from './Types'
 
@@ -27,7 +28,7 @@ const MainPagePortfolioItemFull: React.FC<IMainPagePortfolioItemFull> = ({ chang
         </a>
       </button>
       <div className="portfolio-case-image-container">
-        {caseImage !== null && <img className="portfolio-case-image" src={caseImage.childImageSharp.original.src} alt="img" />}
+        {caseImage !== null && <Image className="portfolio-case-image" fluid={caseImage.childImageSharp.fluid} alt="img" />}
       </div>
     </div>,
     typeof document !== 'undefined' ? document.getElementById('portal') : null
