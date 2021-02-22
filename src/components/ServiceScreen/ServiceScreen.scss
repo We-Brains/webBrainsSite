@@ -17,7 +17,9 @@
     justify-content: center;
     min-height: 100vh;
     padding: 90px 30px 20px;
-
+    & .service-selector-column {
+      min-height: unset;
+    }
     &-header-add {
       display: block;
       padding: 0 15px;
