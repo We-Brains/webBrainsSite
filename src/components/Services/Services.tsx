@@ -46,7 +46,9 @@ const Services: React.FC<IServices> = ({ isMain = true }): JSX.Element => {
     <div className={`service-selector-container service-selector-column-${currentScreen}`}>
       <div className="service-selector-column">
         {isMain ? (
-          <Link to="/portfolio/" className="yellow-btn">Все работы</Link>
+          <Link to="/portfolio/" className="yellow-btn">
+            Все работы
+          </Link>
         ) : (
           <h4 className="service-selector-column-header">Что мы можем Вам предложить?</h4>
         )}

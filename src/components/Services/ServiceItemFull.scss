@@ -24,6 +24,9 @@
     svg {
       width: inherit;
       height: inherit;
+      & path {
+        fill: white !important;
+      }
     }
   }
   &-title {
