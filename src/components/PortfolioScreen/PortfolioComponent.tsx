@@ -13,7 +13,7 @@ const PORTFOLIO_QUERY = graphql`
       title
       subtitle
     }
-    allStrapiPortfolios(sort: { fields: strapiId }) {
+    allStrapiPortfolios(sort: { fields: order }) {
       edges {
         node {
           id
